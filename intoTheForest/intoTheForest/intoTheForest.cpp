@@ -3,12 +3,22 @@
 
 #include <iostream>
 #include "Logger.h"
+#include "DataModule.h"
 
 int main()
 {
     Logger* logger = Logger::getInstance();
-    
+    DataModule dm;
+
+    //testing the Logger
     logger->log("This is a test to see if we can write to a file0");
+ 
+    //testing the DataModule
+    dm.add("FirstKey", 1);
+    dm.add("2ndKey",   2);
+
+    dm.printAll();
+
 
 
     return 0;
