@@ -130,10 +130,14 @@
     <ClCompile Include="DataModule.cpp" />
     <ClCompile Include="intoTheForest.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="StartingTile.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataModule.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="StartingTile.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

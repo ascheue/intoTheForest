@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Logger.h"
 #include "DataModule.h"
+#include "World.h"
 
 int main()
 {
