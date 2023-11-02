@@ -2,23 +2,42 @@
 //
 
 #include <iostream>
-#include "Logger.h"
-#include "DataModule.h"
+//#include "Logger.h"
+//#include "DataModule.h"
 #include "World.h"
+#include "StartingTile.h"
+#include "CurrentTile.h"
 
 int main()
 {
-    Logger* logger = Logger::getInstance();
-    DataModule dm;
-
     //testing the Logger
-    logger->log("This is a test to see if we can write to a file0");
+    //Logger* logger = Logger::getInstance();
+    //logger->log("This is a test to see if we can write to a file0");
  
-    //testing the DataModule
-    dm.add("FirstKey", 1);
-    dm.add("2ndKey",   2);
 
-    dm.printAll();
+    //testing the DataModule
+    //DataModule dm;
+    //dm.add("FirstKey", 1);
+    //dm.add("2ndKey",   2);
+    //dm.printAll();
+
+
+    //testing the world module
+    World world;
+    CurrentTile currentTile;
+    StartingTile startingTile; 
+    currentTile.equals(startingTile);
+    std::cout << "active value: " << currentTile.getCurrentTile() << std::endl;
+    if (currentTile.tileIsAdjacent(Tile1A)) {
+        std::cout << "Tile is adjacent!" << std::endl;
+        std::cout << currentTile.listOfAdjacents[1] << std::endl;
+    }
+    else{
+        std::cout << "Tile is NOT adjacent!" << std:: endl;
+    }
+    //TODO: create a Tile1A class to test moving to adjacent tiles.
+    
+    
 
 
 

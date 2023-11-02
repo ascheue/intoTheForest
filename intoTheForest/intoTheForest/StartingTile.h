@@ -14,6 +14,8 @@ public:
 
     void moveToNextTile(World_location tileSelection);
 
+    void equals(const World& otherWorld);
+
 private:
 };
 
