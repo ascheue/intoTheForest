@@ -3,20 +3,24 @@
 
 #include <iostream>
 //#include "Logger.h"
-//#include "DataModule.h"
+#include "DataModule.h"
 #include "World.h"
 #include "StartingTile.h"
 #include "CurrentTile.h"
 
+
+
+
 int main()
 {
+    bool isPlaying = 1;
     //testing the Logger
     //Logger* logger = Logger::getInstance();
     //logger->log("This is a test to see if we can write to a file0");
- 
+
 
     //testing the DataModule
-    //DataModule dm;
+    DataModule dm;
     //dm.add("FirstKey", 1);
     //dm.add("2ndKey",   2);
     //dm.printAll();
@@ -25,22 +29,32 @@ int main()
     //testing the world module
     World world;
     CurrentTile currentTile;
-    StartingTile startingTile; 
-    currentTile.equals(startingTile);
-    std::cout << "active value: " << currentTile.getCurrentTile() << std::endl;
-    if (currentTile.tileIsAdjacent(Tile1A)) {
-        std::cout << "Tile is adjacent!" << std::endl;
-        std::cout << currentTile.listOfAdjacents[1] << std::endl;
+    StartingTile startingTile;
+
+    std::string nextMove;
+    currentTile.equals(startingTile);       //testing equals() function
+
+    while(isPlaying)
+    {
+        nextMove = world.gatherUserInput();     //literally just gets the input
+        if(nextMove == "quit"){
+            std::cout << "User has ended game." << std::endl;
+            isPlaying = 0;
+        }
+        else{
+            currentTile.moveToNextTile(currentTile, nextMove);
+        }
+        
+
+        std::cout << currentTile.tileID << std::endl;
+
+        /*if (currentTile.tileIsAdjacent(startingTile)) {
+            std::cout << "Tile is adjacent!" << std::endl;
+        }
+        else{
+            std::cout << "Tile is NOT adjacent!" << std:: endl;
+        }*/
     }
-    else{
-        std::cout << "Tile is NOT adjacent!" << std:: endl;
-    }
-    //TODO: create a Tile1A class to test moving to adjacent tiles.
-    
-    
-
-
-
     return 0;
 }
 

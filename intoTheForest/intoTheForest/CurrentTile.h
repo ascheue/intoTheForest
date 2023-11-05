@@ -2,19 +2,15 @@
 #define CURRENTTILE_H
 
 #include "World.h"
+//extern CurrentTile currentTile;
 
 class CurrentTile : public World {
 public:
     //Constructor
     CurrentTile();
 
-    int getCurrentTile() override;
-
-    bool tileIsAdjacent(World_location tile) override;
-
-    void moveToNextTile(World_location tileSelection);
-
-    void equals(const World& otherWorld);
+    void displayText() override;
+    void moveToNextTile(World& currentTile, std::string tileSelection) override;
 
 private:
 };

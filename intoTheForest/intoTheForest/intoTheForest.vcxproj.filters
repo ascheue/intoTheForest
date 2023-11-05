@@ -33,6 +33,12 @@
     <ClCompile Include="CurrentTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NextTile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviousTile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logger.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CurrentTile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NextTile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviousTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

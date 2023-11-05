@@ -1,69 +1,53 @@
 #include "World.h"
+#include "NextTile.h"
 #include "StartingTile.h"
+#include "CurrentTile.h"
 #include <iostream>
+
+CurrentTile otherTile1;
+NextTile nextTile;
 
 //Constructor
 StartingTile::StartingTile() {
-    locationEnum = startingTile;
+    //locationEnum = startingTile;
     tileName = "StartingTile";
     tileID = 0;
-    numAdjacents = 3;
-    listOfAdjacents[0] = Tile1A;
-    listOfAdjacents[1] = Tile1B;
-    listOfAdjacents[2] = Tile1C;
-    listOfAdjacents[3] = OOB;
-    listOfAdjacents[4] = OOB;
-    listOfAdjacents[5] = OOB;
-    listOfAdjacents[6] = OOB;
-    listOfAdjacents[7] = OOB;
-    listOfAdjacents[8] = OOB;
-    listOfAdjacents[9] = OOB;
+    numAdjacents = 0;
+    numNavigations = 4;
+    //listOfAdjacents = std::vector<World>();
+    //listOfNavigations = std::vector<std::string>();
+
+    //listOfAdjacents.push_back(otherTile1);    //this line specifically is causing issues
+    //listOfAdjacents[0] = otherTile1;
+
+    //listOfNavigations.push_back("go back");
+    //listOfNavigations[0] = "go back";
+
+    //actionsToAdvanceTile["go straight"] = nextTile;    //testing this
+    actionsToAdvanceTile["go forward"] = NextTile();
+
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 1;
 }
 
-int StartingTile::getCurrentTile() {
-    return tileID;
-}
-
-bool StartingTile::tileIsAdjacent(World_location tile) {
-    for(int i=0; i<numAdjacents; i++){
-        if(listOfAdjacents[i] == tile){
-            return true;
-        }
+void StartingTile::displayText() {
+    if(!hasBeenVisited){
+        //Message for the first time you have entered zone/tile
     }
-    return false;
-}
-
-void StartingTile::equals(const World& otherWorld) {
-    tileName = otherWorld.tileName;
-    tileID = otherWorld.tileID;
-    numAdjacents = otherWorld.numAdjacents;
-    for (int i = 0; i < numAdjacents; i++) {
-        listOfAdjacents[i] = otherWorld.listOfAdjacents[i];
+    else if(hasBeenVisited){
+        //Message for already having been to this zone/tile
     }
-    isCurrentLevel = otherWorld.isCurrentLevel;
-    hasBeenVisited = otherWorld.hasBeenVisited;
+    hasBeenVisited = 1;
 }
 
-//bool StartingTile::moveToNextTile(World_location tileSelection) {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void StartingTile::moveToNextTile(World& yourCurrentTile, std::string tileSelection) {
+    /*if(actionsToAdvanceTile.find(tileSelection) != actionsToAdvanceTile.end()){
+        World nextTile = actionsToAdvanceTile[tileSelection];
+        yourCurrentTile = nextTile;
+    }
+    else{
+        std::cout << "Invalid action. Try again." << std::endl; 
+    }*/
+}
 
 

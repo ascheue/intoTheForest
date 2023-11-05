@@ -3,37 +3,33 @@
 
 #include <string>
 #include <vector>
-
-typedef enum
-{
-    startingTile,
-    Tile1A,
-    Tile1B,
-    Tile1C,
-    OOB,
-} World_location;
+#include <map>
 
 class World {
 private:
 
 public:
-    World_location locationEnum;
     std::string tileName;
     int tileID;
     int numAdjacents;
-    World_location listOfAdjacents[100];
+    int numNavigations;
+    std::vector<std::string> listOfNavigations;
+    //std::string listOfNavigations[100];
+    std::vector<World> listOfAdjacents;
     bool isCurrentLevel;
     bool hasBeenVisited;
+    std::map<std::string, World> actionsToAdvanceTile;
 
     World();
 
-    virtual int getCurrentTile();
-
-    virtual bool tileIsAdjacent(World_location tile);
-
-    virtual void equals(const World& otherWorld);
-
-    void moveToNextTile(World_location tileSelection);
+    virtual void displayText();
+    std::string gatherUserInput();
+    World getCurrentWorld();
+    virtual int getCurrentTileID();
+    virtual std::string getCurrentTileName();
+    virtual bool tileIsAdjacent(World tile);
+    void equals(const World& otherWorld);
+    virtual void moveToNextTile(World& currentTile, std::string tileSelection);
 
 };
 
