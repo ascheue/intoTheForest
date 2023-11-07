@@ -70,13 +70,5 @@ void World::equals(const World& otherWorld) {
     revisitMessage = otherWorld.revisitMessage;
 }
 
-void World::moveToNextTile(World& currentTile, std::string tileSelection) {
-    /*if(actionsToAdvanceTile.find(tileSelection) != actionsToAdvanceTile.end()){
-        World selectedTile = actionsToAdvanceTile[tileSelection];
-        currentTile = selectedTile;
-    }
-    else{
-        std::cout << "Invalid action. Try again." << std::endl; 
-    }*/
-}
+void World::moveToNextTile(World& currentTile, std::string tileSelection) {}
 

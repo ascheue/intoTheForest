@@ -42,21 +42,21 @@ int main()
         }
         else{
             switch (currentTile.getCurrentTileID()) {
-                case 0:
-                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(tile1a);}
+                case 0: //moves from the starting tile
+                    if(nextMove == currentTile.listOfNavigations[0])      {currentTile.equals(tile1a);}
                     else if(nextMove == currentTile.listOfNavigations[1]) {currentTile.equals(tile1b);}
                     else if(nextMove == currentTile.listOfNavigations[2]) {currentTile.equals(tile1c);}
                     else std::cout << "selection not found" << std::endl;
                     break;
-                case 1:
+                case 1: //moves from tile1a
                     if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
                     else std::cout << "selection not found1" << std::endl;
                     break;
-                case 2:
+                case 2: //moves from tile1b
                     if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
                     else std::cout << "selection not found2" << std::endl;
                     break;
-                case 3:
+                case 3: //moves from tile1c
                     if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
                     else std::cout << "selection not found3" << std::endl;
                     break;
@@ -64,16 +64,16 @@ int main()
                     break;
             }
             switch (currentTile.getCurrentTileID()) {
-                case 0:
+                case 0: //we are on starting tile
                     startingTile.displayText();
                     break;
-                case 1:
+                case 1: //we are on tile1a
                     tile1a.displayText();
                     break;
-                case 2:
+                case 2: //we are on tile1b
                     tile1b.displayText();
                     break;
-                case 3:
+                case 3: //we are on tile1c
                     tile1c.displayText();
                     break;
                 default:

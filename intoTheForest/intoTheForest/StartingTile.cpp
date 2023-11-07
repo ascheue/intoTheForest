@@ -34,8 +34,6 @@ void StartingTile::displayText() {
     hasBeenVisited = 1;
 }
 
-void StartingTile::moveToNextTile(World& yourCurrentTile, std::string tileSelection) {
-
-}
+void StartingTile::moveToNextTile(World& yourCurrentTile, std::string tileSelection) {}
 
 

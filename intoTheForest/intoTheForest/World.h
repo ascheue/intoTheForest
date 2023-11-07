@@ -25,7 +25,7 @@ public:
 
     virtual void displayText();
     std::string gatherUserInput();
-    World getCurrentWorld();
+    virtual World getCurrentWorld();
     virtual int getCurrentTileID();
     virtual std::string getCurrentTileName();
     virtual bool tileIsAdjacent(World tile);
