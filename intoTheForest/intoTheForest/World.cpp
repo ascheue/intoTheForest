@@ -55,11 +55,6 @@ std::string World::getCurrentTileName() {
 }
 
 bool World::tileIsAdjacent(World tile) {
-    for(int i=0; i<numAdjacents; i++){
-        //if(listOfAdjacents[i] == tile){
-        //    return true;
-        //}
-    }
     return false;
 }
 
@@ -67,26 +62,21 @@ void World::equals(const World& otherWorld) {
     tileName = otherWorld.tileName;
     tileID = otherWorld.tileID;
     numAdjacents = otherWorld.numAdjacents;
-
-    actionsToAdvanceTile = otherWorld.actionsToAdvanceTile;
-
-    /*for (int i = 0; i < numAdjacents; i++) {
-        listOfAdjacents[i] = otherWorld.listOfAdjacents[i];
-    }
-    for (int i = 0; i < numNavigations; i++) {
-        //listOfNavigations[i] = otherWorld.listOfNavigations[i];
-    }*/
+    //actionsToAdvanceTile = otherWorld.actionsToAdvanceTile;
+    listOfNavigations = otherWorld.listOfNavigations;
     isCurrentLevel = otherWorld.isCurrentLevel;
     hasBeenVisited = otherWorld.hasBeenVisited;
+    welcomeMessage = otherWorld.welcomeMessage;
+    revisitMessage = otherWorld.revisitMessage;
 }
 
 void World::moveToNextTile(World& currentTile, std::string tileSelection) {
-    if(actionsToAdvanceTile.find(tileSelection) != actionsToAdvanceTile.end()){
+    /*if(actionsToAdvanceTile.find(tileSelection) != actionsToAdvanceTile.end()){
         World selectedTile = actionsToAdvanceTile[tileSelection];
         currentTile = selectedTile;
     }
     else{
         std::cout << "Invalid action. Try again." << std::endl; 
-    }
+    }*/
 }
 

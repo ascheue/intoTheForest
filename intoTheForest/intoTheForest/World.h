@@ -14,11 +14,12 @@ public:
     int numAdjacents;
     int numNavigations;
     std::vector<std::string> listOfNavigations;
-    //std::string listOfNavigations[100];
     std::vector<World> listOfAdjacents;
     bool isCurrentLevel;
     bool hasBeenVisited;
-    std::map<std::string, World> actionsToAdvanceTile;
+    std::string welcomeMessage;
+    std::string revisitMessage;
+    //std::map<std::string, World> actionsToAdvanceTile;
 
     World();
 

@@ -33,10 +33,13 @@
     <ClCompile Include="CurrentTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NextTile.cpp">
+    <ClCompile Include="Tile1A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PreviousTile.cpp">
+    <ClCompile Include="Tile1B.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile1C.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,10 +59,13 @@
     <ClInclude Include="CurrentTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NextTile.h">
+    <ClInclude Include="Tile1A.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PreviousTile.h">
+    <ClInclude Include="Tile1B.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile1C.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

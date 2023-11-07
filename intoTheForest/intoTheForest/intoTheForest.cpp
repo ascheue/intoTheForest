@@ -1,15 +1,12 @@
-// intoTheForest.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 //#include "Logger.h"
 #include "DataModule.h"
 #include "World.h"
 #include "StartingTile.h"
 #include "CurrentTile.h"
-
-
-
+#include "Tile1A.h"
+#include "Tile1B.h"
+#include "Tile1C.h"
 
 int main()
 {
@@ -18,21 +15,22 @@ int main()
     //Logger* logger = Logger::getInstance();
     //logger->log("This is a test to see if we can write to a file0");
 
-
     //testing the DataModule
     DataModule dm;
     //dm.add("FirstKey", 1);
     //dm.add("2ndKey",   2);
     //dm.printAll();
 
-
     //testing the world module
     World world;
     CurrentTile currentTile;
     StartingTile startingTile;
+    Tile1A tile1a;
+    Tile1B tile1b;
+    Tile1C tile1c;
 
     std::string nextMove;
-    currentTile.equals(startingTile);       //testing equals() function
+    currentTile.equals(startingTile);
 
     while(isPlaying)
     {
@@ -42,18 +40,49 @@ int main()
             isPlaying = 0;
         }
         else{
-            currentTile.moveToNextTile(currentTile, nextMove);
+            switch (currentTile.getCurrentTileID()) {
+                case 0:
+                    if(nextMove == currentTile.listOfNavigations[0]) {
+                        currentTile.equals(tile1a);
+                        currentTile.displayText();
+                    }
+                    else if(nextMove == currentTile.listOfNavigations[1]) {
+                        currentTile.equals(tile1b);
+                        currentTile.displayText();
+                    }
+                    else if(nextMove == currentTile.listOfNavigations[2]) {
+                        currentTile.equals(tile1c);
+                        currentTile.displayText();
+                    }
+                    else std::cout << "selection not found" << std::endl;
+                    break;
+                case 1:
+                    if(nextMove == currentTile.listOfNavigations[0]) {
+                        currentTile.equals(startingTile);
+                        currentTile.displayText();
+                    }
+                    else std::cout << "selection not found1" << std::endl;
+                    break;
+                case 2:
+                    if(nextMove == currentTile.listOfNavigations[0]) {
+                        currentTile.equals(startingTile);
+                        currentTile.displayText();
+                    }
+                    else std::cout << "selection not found2" << std::endl;
+                    break;
+                case 3:
+                    if(nextMove == currentTile.listOfNavigations[0]) {
+                        currentTile.equals(startingTile);
+                        currentTile.displayText();
+                    }
+                    else std::cout << "selection not found3" << std::endl;
+                    break;
+                default:
+                    break;
+            }
         }
-        
-
         std::cout << currentTile.tileID << std::endl;
 
-        /*if (currentTile.tileIsAdjacent(startingTile)) {
-            std::cout << "Tile is adjacent!" << std::endl;
-        }
-        else{
-            std::cout << "Tile is NOT adjacent!" << std:: endl;
-        }*/
     }
     return 0;
 }
