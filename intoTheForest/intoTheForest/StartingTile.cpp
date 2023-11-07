@@ -21,7 +21,7 @@ StartingTile::StartingTile() {
     revisitMessage = "You are back at the starting tile";
 
     isCurrentLevel = 1; //may not need
-    hasBeenVisited = 0;
+    hasBeenVisited = 1;
 }
 
 void StartingTile::displayText() {

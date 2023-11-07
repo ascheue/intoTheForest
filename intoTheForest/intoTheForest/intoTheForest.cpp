@@ -34,6 +34,7 @@ int main()
 
     while(isPlaying)
     {
+
         nextMove = world.gatherUserInput();     //literally just gets the input
         if(nextMove == "quit"){
             std::cout << "User has ended game." << std::endl;
@@ -42,40 +43,38 @@ int main()
         else{
             switch (currentTile.getCurrentTileID()) {
                 case 0:
-                    if(nextMove == currentTile.listOfNavigations[0]) {
-                        currentTile.equals(tile1a);
-                        currentTile.displayText();
-                    }
-                    else if(nextMove == currentTile.listOfNavigations[1]) {
-                        currentTile.equals(tile1b);
-                        currentTile.displayText();
-                    }
-                    else if(nextMove == currentTile.listOfNavigations[2]) {
-                        currentTile.equals(tile1c);
-                        currentTile.displayText();
-                    }
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(tile1a);}
+                    else if(nextMove == currentTile.listOfNavigations[1]) {currentTile.equals(tile1b);}
+                    else if(nextMove == currentTile.listOfNavigations[2]) {currentTile.equals(tile1c);}
                     else std::cout << "selection not found" << std::endl;
                     break;
                 case 1:
-                    if(nextMove == currentTile.listOfNavigations[0]) {
-                        currentTile.equals(startingTile);
-                        currentTile.displayText();
-                    }
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
                     else std::cout << "selection not found1" << std::endl;
                     break;
                 case 2:
-                    if(nextMove == currentTile.listOfNavigations[0]) {
-                        currentTile.equals(startingTile);
-                        currentTile.displayText();
-                    }
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
                     else std::cout << "selection not found2" << std::endl;
                     break;
                 case 3:
-                    if(nextMove == currentTile.listOfNavigations[0]) {
-                        currentTile.equals(startingTile);
-                        currentTile.displayText();
-                    }
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
                     else std::cout << "selection not found3" << std::endl;
+                    break;
+                default:
+                    break;
+            }
+            switch (currentTile.getCurrentTileID()) {
+                case 0:
+                    startingTile.displayText();
+                    break;
+                case 1:
+                    tile1a.displayText();
+                    break;
+                case 2:
+                    tile1b.displayText();
+                    break;
+                case 3:
+                    tile1c.displayText();
                     break;
                 default:
                     break;
