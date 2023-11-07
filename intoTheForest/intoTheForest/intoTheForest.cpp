@@ -1,26 +1,88 @@
-// intoTheForest.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include "Logger.h"
+//#include "Logger.h"
 #include "DataModule.h"
+#include "World.h"
+#include "StartingTile.h"
+#include "CurrentTile.h"
+#include "Tile1A.h"
+#include "Tile1B.h"
+#include "Tile1C.h"
 
 int main()
 {
-    Logger* logger = Logger::getInstance();
-    DataModule dm;
-
+    bool isPlaying = 1;
     //testing the Logger
-    logger->log("This is a test to see if we can write to a file0");
- 
+    //Logger* logger = Logger::getInstance();
+    //logger->log("This is a test to see if we can write to a file0");
+
     //testing the DataModule
-    dm.add("FirstKey", 1);
-    dm.add("2ndKey",   2);
+    DataModule dm;
+    //dm.add("FirstKey", 1);
+    //dm.add("2ndKey",   2);
+    //dm.printAll();
 
-    dm.printAll();
+    //testing the world module
+    World world;
+    CurrentTile currentTile;
+    StartingTile startingTile;
+    Tile1A tile1a;
+    Tile1B tile1b;
+    Tile1C tile1c;
 
+    std::string nextMove;
+    currentTile.equals(startingTile);
 
+    while(isPlaying)
+    {
 
+        nextMove = world.gatherUserInput();     //literally just gets the input
+        if(nextMove == "quit"){
+            std::cout << "User has ended game." << std::endl;
+            isPlaying = 0;
+        }
+        else{
+            switch (currentTile.getCurrentTileID()) {
+                case 0: //moves from the starting tile
+                    if(nextMove == currentTile.listOfNavigations[0])      {currentTile.equals(tile1a);}
+                    else if(nextMove == currentTile.listOfNavigations[1]) {currentTile.equals(tile1b);}
+                    else if(nextMove == currentTile.listOfNavigations[2]) {currentTile.equals(tile1c);}
+                    else std::cout << "selection not found" << std::endl;
+                    break;
+                case 1: //moves from tile1a
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
+                    else std::cout << "selection not found1" << std::endl;
+                    break;
+                case 2: //moves from tile1b
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
+                    else std::cout << "selection not found2" << std::endl;
+                    break;
+                case 3: //moves from tile1c
+                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
+                    else std::cout << "selection not found3" << std::endl;
+                    break;
+                default:
+                    break;
+            }
+            switch (currentTile.getCurrentTileID()) {
+                case 0: //we are on starting tile
+                    startingTile.displayText();
+                    break;
+                case 1: //we are on tile1a
+                    tile1a.displayText();
+                    break;
+                case 2: //we are on tile1b
+                    tile1b.displayText();
+                    break;
+                case 3: //we are on tile1c
+                    tile1c.displayText();
+                    break;
+                default:
+                    break;
+            }
+        }
+        std::cout << currentTile.tileID << std::endl;
+
+    }
     return 0;
 }
 

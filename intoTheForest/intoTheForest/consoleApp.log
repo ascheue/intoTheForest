@@ -1,2 +1,333 @@
 02:38:42 2023-10-21  :  :This is a test to see if we can write to a file0
 20:20:40 2023-10-30  :  :This is a test to see if we can write to a file0
+22:25:25 2023-10-30  :  :This is a test to see if we can write to a file0
+18:37:53 2023-11-02  :  :User has chosen: go left
+18:37:55 2023-11-02  :  :User has chosen: go right
+18:39:48 2023-11-02  :  :User has chosen: go right
+18:39:50 2023-11-02  :  :User has chosen: go left
+22:36:36 2023-11-02  :  :User has chosen: g
+22:36:41 2023-11-02  :  :User has chosen: h
+22:57:34 2023-11-02  :  :User has chosen: fds
+22:57:44 2023-11-02  :  :User has chosen:   
+23:22:42 2023-11-02  :  :User has chosen: fd
+23:26:55 2023-11-02  :  :User has chosen: go left
+23:55:37 2023-11-02  :  :User has chosen: fd
+00:00:42 2023-11-03  :  :User has chosen: fd
+22:56:18 2023-11-03  :  :User has chosen: go left
+22:56:22 2023-11-03  :  :User has chosen: go right
+22:56:25 2023-11-03  :  :User has chosen: go straight
+22:56:27 2023-11-03  :  :User has chosen: go left
+23:12:50 2023-11-03  :  :User has chosen: fds
+23:13:37 2023-11-03  :  :User has chosen: fdsfds
+23:54:08 2023-11-03  :  :User has chosen: fdsafd
+23:55:54 2023-11-03  :  :User has chosen: fdfdf
+00:02:05 2023-11-04  :  :User has chosen: vgfdgf
+00:08:49 2023-11-04  :  :User has chosen: vcxz
+11:32:33 2023-11-04  :  :User has chosen: g left
+11:32:35 2023-11-04  :  :User has chosen: go left
+11:37:30 2023-11-04  :  :User has chosen: go left
+11:37:59 2023-11-04  :  :User has chosen: left
+11:44:27 2023-11-04  :  :User has chosen: go left
+12:12:01 2023-11-04  :  :User has chosen: go left
+12:12:03 2023-11-04  :  :User has chosen: go left
+16:18:36 2023-11-04  :  :User has chosen: go straight
+16:25:37 2023-11-04  :  :User has chosen: go nowhere
+16:25:55 2023-11-04  :  :User has chosen: gfdsa
+16:31:37 2023-11-04  :  :User has chosen: cxz
+16:31:38 2023-11-04  :  :User has chosen: 
+16:31:39 2023-11-04  :  :User has chosen: 
+16:38:51 2023-11-04  :  :User has chosen: fdsa
+16:46:31 2023-11-04  :  :User has chosen: gfdsg
+16:55:16 2023-11-04  :  :User has chosen: fdsaf
+16:55:17 2023-11-04  :  :User has chosen: fdsafdsa
+16:57:50 2023-11-04  :  :User has chosen: gdsa
+16:57:54 2023-11-04  :  :User has chosen: go straight
+16:59:49 2023-11-04  :  :User has chosen: go straight
+17:02:11 2023-11-04  :  :User has chosen: fdsfds
+17:02:15 2023-11-04  :  :User has chosen: go straight
+17:04:49 2023-11-04  :  :User has chosen: go straight
+17:05:01 2023-11-04  :  :User has chosen: go straight
+17:06:44 2023-11-04  :  :User has chosen: go straight
+17:06:53 2023-11-04  :  :User has chosen: go straight
+17:11:05 2023-11-04  :  :User has chosen: fdsa
+17:11:08 2023-11-04  :  :User has chosen: fdsa
+17:11:12 2023-11-04  :  :User has chosen: go straight
+17:15:11 2023-11-04  :  :User has chosen: fdsa
+17:15:15 2023-11-04  :  :User has chosen: go straight
+17:16:17 2023-11-04  :  :User has chosen: fdsa
+17:16:20 2023-11-04  :  :User has chosen: go straight
+17:16:22 2023-11-04  :  :User has chosen: go straight
+17:25:24 2023-11-04  :  :User has chosen: fdsa
+17:25:25 2023-11-04  :  :User has chosen: fdsa
+17:25:28 2023-11-04  :  :User has chosen: go straight
+17:31:50 2023-11-04  :  :User has chosen: fdsa
+17:31:53 2023-11-04  :  :User has chosen: go straight
+17:48:16 2023-11-04  :  :User has chosen: fdsa
+17:48:19 2023-11-04  :  :User has chosen: go straight
+18:26:57 2023-11-04  :  :User has chosen: fdsaf
+18:27:01 2023-11-04  :  :User has chosen: go straight
+18:28:47 2023-11-04  :  :User has chosen: cxz
+18:28:50 2023-11-04  :  :User has chosen: go straight
+18:30:01 2023-11-04  :  :User has chosen: fdsa
+18:30:06 2023-11-04  :  :User has chosen: go straight
+18:30:24 2023-11-04  :  :User has chosen: fdsa
+18:30:27 2023-11-04  :  :User has chosen: go straight
+18:32:14 2023-11-04  :  :User has chosen: fdsf
+18:34:35 2023-11-04  :  :User has chosen: fdsa
+18:35:20 2023-11-04  :  :User has chosen: fdsa
+18:35:23 2023-11-04  :  :User has chosen: go stsraight
+18:35:25 2023-11-04  :  :User has chosen: go straight
+18:36:28 2023-11-04  :  :User has chosen: fdsa
+18:36:32 2023-11-04  :  :User has chosen: go straight
+18:36:33 2023-11-04  :  :User has chosen: go back
+18:40:40 2023-11-04  :  :User has chosen: go straight
+18:40:42 2023-11-04  :  :User has chosen: fdsa
+23:26:59 2023-11-04  :  :User has chosen: go straighti
+23:27:03 2023-11-04  :  :User has chosen: 
+23:27:04 2023-11-04  :  :User has chosen: 
+23:27:04 2023-11-04  :  :User has chosen: 
+23:27:04 2023-11-04  :  :User has chosen: 
+23:27:04 2023-11-04  :  :User has chosen: 
+23:27:04 2023-11-04  :  :User has chosen: 
+23:27:05 2023-11-04  :  :User has chosen: 
+23:27:05 2023-11-04  :  :User has chosen: 
+13:56:16 2023-11-05  :  :User has chosen: gfdsa
+13:56:17 2023-11-05  :  :User has chosen: fdsa
+13:56:22 2023-11-05  :  :User has chosen: go straight
+14:08:09 2023-11-05  :  :User has chosen: fd
+14:08:10 2023-11-05  :  :User has chosen: sa
+14:08:12 2023-11-05  :  :User has chosen: go straight
+14:08:13 2023-11-05  :  :User has chosen: 
+14:11:48 2023-11-05  :  :User has chosen: fdsa
+14:11:50 2023-11-05  :  :User has chosen: go straight
+14:17:06 2023-11-05  :  :User has chosen: fdsa
+14:17:07 2023-11-05  :  :User has chosen: fdsa
+14:17:11 2023-11-05  :  :User has chosen: go back
+14:31:36 2023-11-05  :  :User has chosen: fdsa
+14:31:38 2023-11-05  :  :User has chosen: fdsa
+14:31:41 2023-11-05  :  :User has chosen: go straight
+14:31:46 2023-11-05  :  :User has chosen: quit
+14:32:38 2023-11-05  :  :User has chosen: fdsa
+14:35:28 2023-11-05  :  :User has chosen: go forward
+14:35:31 2023-11-05  :  :User has chosen: go back
+14:35:33 2023-11-05  :  :User has chosen: quit
+14:36:43 2023-11-05  :  :User has chosen: fdsa
+14:36:46 2023-11-05  :  :User has chosen: go forward
+14:36:53 2023-11-05  :  :User has chosen: quit
+14:38:07 2023-11-05  :  :User has chosen: fdsa
+14:38:32 2023-11-05  :  :User has chosen: fdsa
+14:39:14 2023-11-05  :  :User has chosen: fds
+14:39:20 2023-11-05  :  :User has chosen: go forward
+14:39:23 2023-11-05  :  :User has chosen: quit
+14:41:02 2023-11-05  :  :User has chosen: fdsa
+14:41:05 2023-11-05  :  :User has chosen: go forward
+14:42:40 2023-11-05  :  :User has chosen: quit
+14:43:01 2023-11-05  :  :User has chosen: fdsa
+14:43:04 2023-11-05  :  :User has chosen: go forward
+14:43:26 2023-11-05  :  :User has chosen: fdsa
+14:43:30 2023-11-05  :  :User has chosen: go forward
+14:44:06 2023-11-05  :  :User has chosen: go forward
+14:44:20 2023-11-05  :  :User has chosen: quit
+14:44:50 2023-11-05  :  :User has chosen: fdsa
+14:44:53 2023-11-05  :  :User has chosen: go back
+14:44:56 2023-11-05  :  :User has chosen: quit
+14:52:53 2023-11-05  :  :User has chosen: quit
+15:21:33 2023-11-05  :  :User has chosen: fdsa
+15:21:36 2023-11-05  :  :User has chosen: go forward
+15:21:39 2023-11-05  :  :User has chosen: go back
+15:21:41 2023-11-05  :  :User has chosen: quit
+16:31:44 2023-11-05  :  :User has chosen: gdsa
+16:31:49 2023-11-05  :  :User has chosen: go forward
+16:31:51 2023-11-05  :  :User has chosen: quit
+16:38:28 2023-11-05  :  :User has chosen: gdfsa
+16:38:30 2023-11-05  :  :User has chosen: go straight
+16:38:32 2023-11-05  :  :User has chosen: go forward
+16:38:34 2023-11-05  :  :User has chosen: quit
+16:42:15 2023-11-05  :  :User has chosen: fdsa
+16:42:18 2023-11-05  :  :User has chosen: go back
+16:42:21 2023-11-05  :  :User has chosen: go forward
+16:42:23 2023-11-05  :  :User has chosen: fdsa
+16:42:25 2023-11-05  :  :User has chosen: go back
+16:42:31 2023-11-05  :  :User has chosen: fdksal;
+16:42:33 2023-11-05  :  :User has chosen: fdjsla
+18:33:25 2023-11-06  :  :User has chosen: fdsa
+18:33:27 2023-11-06  :  :User has chosen: go straight
+18:33:29 2023-11-06  :  :User has chosen: go back
+18:33:31 2023-11-06  :  :User has chosen: go forward
+18:33:34 2023-11-06  :  :User has chosen: go back
+18:33:35 2023-11-06  :  :User has chosen: quit
+18:34:50 2023-11-06  :  :User has chosen: fdsa
+18:34:54 2023-11-06  :  :User has chosen: go fowrawd
+18:34:57 2023-11-06  :  :User has chosen: go forward
+18:34:59 2023-11-06  :  :User has chosen: go back
+18:35:01 2023-11-06  :  :User has chosen: quit
+18:47:19 2023-11-06  :  :User has chosen: fdsa
+18:47:19 2023-11-06  :  :User has chosen: fd
+18:47:21 2023-11-06  :  :User has chosen: safdf\\\
+18:47:23 2023-11-06  :  :User has chosen: quit
+18:53:50 2023-11-06  :  :User has chosen: fdsaf
+18:53:53 2023-11-06  :  :User has chosen: go forward
+18:53:55 2023-11-06  :  :User has chosen: go back
+18:53:56 2023-11-06  :  :User has chosen: quit
+18:54:35 2023-11-06  :  :User has chosen: vgfdsaf
+18:54:37 2023-11-06  :  :User has chosen: quit
+18:55:33 2023-11-06  :  :User has chosen: fgdsa
+18:55:34 2023-11-06  :  :User has chosen: quit
+18:56:12 2023-11-06  :  :User has chosen: fdsa
+18:56:13 2023-11-06  :  :User has chosen: quit
+18:57:23 2023-11-06  :  :User has chosen: fdsafdsa
+18:57:24 2023-11-06  :  :User has chosen: quit
+19:04:10 2023-11-06  :  :User has chosen: fdsaf
+19:04:11 2023-11-06  :  :User has chosen: quit
+19:06:50 2023-11-06  :  :User has chosen: fdsaf
+19:06:52 2023-11-06  :  :User has chosen: quit
+19:08:37 2023-11-06  :  :User has chosen: quit
+19:26:27 2023-11-06  :  :User has chosen: fdsa
+19:28:36 2023-11-06  :  :User has chosen: fdsa
+19:28:50 2023-11-06  :  :User has chosen: fdsa
+19:29:08 2023-11-06  :  :User has chosen: fdsa
+19:32:54 2023-11-06  :  :User has chosen: go left
+19:33:40 2023-11-06  :  :User has chosen: fdsa
+19:33:48 2023-11-06  :  :User has chosen: go left
+19:34:01 2023-11-06  :  :User has chosen: go left
+19:34:12 2023-11-06  :  :User has chosen: go left
+19:34:48 2023-11-06  :  :User has chosen: fds
+19:36:01 2023-11-06  :  :User has chosen: fdsa
+19:36:53 2023-11-06  :  :User has chosen: fdsa
+19:38:41 2023-11-06  :  :User has chosen: fdsa
+19:38:42 2023-11-06  :  :User has chosen: fdsa
+19:38:43 2023-11-06  :  :User has chosen: quit
+19:56:19 2023-11-06  :  :User has chosen: fdsa
+19:57:45 2023-11-06  :  :User has chosen: fdsa
+19:57:51 2023-11-06  :  :User has chosen: go forward
+19:57:53 2023-11-06  :  :User has chosen: go back
+19:57:58 2023-11-06  :  :User has chosen: quit
+20:11:08 2023-11-06  :  :User has chosen: quit
+20:14:08 2023-11-06  :  :User has chosen: fdsa
+20:14:10 2023-11-06  :  :User has chosen: go left
+20:14:42 2023-11-06  :  :User has chosen: go left
+20:17:12 2023-11-06  :  :User has chosen: go left
+20:18:40 2023-11-06  :  :User has chosen: fdsa
+20:18:42 2023-11-06  :  :User has chosen: go left
+20:18:46 2023-11-06  :  :User has chosen: go right
+20:19:31 2023-11-06  :  :User has chosen: go left
+20:19:33 2023-11-06  :  :User has chosen: go left
+20:22:58 2023-11-06  :  :User has chosen: fdsaf
+20:22:59 2023-11-06  :  :User has chosen: fdsa
+20:23:03 2023-11-06  :  :User has chosen: go straight
+20:23:06 2023-11-06  :  :User has chosen: go fdsa
+20:23:11 2023-11-06  :  :User has chosen: go straight
+20:23:15 2023-11-06  :  :User has chosen: go left
+20:23:22 2023-11-06  :  :User has chosen: fdsa
+20:23:26 2023-11-06  :  :User has chosen: go right
+20:23:33 2023-11-06  :  :User has chosen: go straight
+20:23:35 2023-11-06  :  :User has chosen: go back
+20:46:53 2023-11-06  :  :User has chosen: fdsa
+20:46:54 2023-11-06  :  :User has chosen: fdsa
+20:46:58 2023-11-06  :  :User has chosen: go straight
+20:47:00 2023-11-06  :  :User has chosen: fdas
+20:47:02 2023-11-06  :  :User has chosen: fdas
+20:47:06 2023-11-06  :  :User has chosen: go left
+20:47:17 2023-11-06  :  :User has chosen: quit
+20:50:10 2023-11-06  :  :User has chosen: fdsa
+20:50:15 2023-11-06  :  :User has chosen: go left
+20:50:17 2023-11-06  :  :User has chosen: fdsa
+20:50:57 2023-11-06  :  :User has chosen: fdsa
+20:51:48 2023-11-06  :  :User has chosen: go back
+20:52:10 2023-11-06  :  :User has chosen: quit
+20:52:24 2023-11-06  :  :User has chosen: go left
+20:52:28 2023-11-06  :  :User has chosen: go straight
+20:54:28 2023-11-06  :  :User has chosen: fdsa
+20:54:29 2023-11-06  :  :User has chosen: fdsa
+20:54:30 2023-11-06  :  :User has chosen: fds
+20:54:30 2023-11-06  :  :User has chosen: fdsa
+20:54:52 2023-11-06  :  :User has chosen: fdsa
+20:54:55 2023-11-06  :  :User has chosen: fdsa
+20:54:57 2023-11-06  :  :User has chosen: go left
+20:54:59 2023-11-06  :  :User has chosen: fdsa
+20:55:06 2023-11-06  :  :User has chosen: go back
+20:55:59 2023-11-06  :  :User has chosen: go    
+20:56:01 2023-11-06  :  :User has chosen: go left
+20:56:04 2023-11-06  :  :User has chosen: go straight
+20:57:22 2023-11-06  :  :User has chosen: fdsa
+20:57:24 2023-11-06  :  :User has chosen: go left
+20:57:25 2023-11-06  :  :User has chosen: go back
+20:58:02 2023-11-06  :  :User has chosen: fdsa
+20:58:04 2023-11-06  :  :User has chosen: go left
+20:58:06 2023-11-06  :  :User has chosen: go back
+21:01:53 2023-11-06  :  :User has chosen: fdsa
+21:01:56 2023-11-06  :  :User has chosen: go left
+21:02:01 2023-11-06  :  :User has chosen: go right
+21:02:03 2023-11-06  :  :User has chosen: fdsa
+21:02:06 2023-11-06  :  :User has chosen: go back
+21:02:06 2023-11-06  :  :User has chosen: 
+21:02:10 2023-11-06  :  :User has chosen: go straight
+21:02:14 2023-11-06  :  :User has chosen: go back
+21:02:24 2023-11-06  :  :User has chosen: go back
+21:03:01 2023-11-06  :  :User has chosen: quit
+21:12:49 2023-11-06  :  :User has chosen: fdsa
+21:12:52 2023-11-06  :  :User has chosen: go left
+21:14:32 2023-11-06  :  :User has chosen: fdsa
+21:14:34 2023-11-06  :  :User has chosen: go left
+21:14:35 2023-11-06  :  :User has chosen: go 
+21:14:39 2023-11-06  :  :User has chosen: go straight
+21:14:41 2023-11-06  :  :User has chosen: go back
+21:14:43 2023-11-06  :  :User has chosen: go right
+21:14:45 2023-11-06  :  :User has chosen: go back
+21:14:53 2023-11-06  :  :User has chosen: quit
+21:16:12 2023-11-06  :  :User has chosen: go left
+21:20:16 2023-11-06  :  :User has chosen:        
+21:20:19 2023-11-06  :  :User has chosen: 
+21:20:21 2023-11-06  :  :User has chosen: quit
+21:20:28 2023-11-06  :  :User has chosen: fdsa
+21:20:31 2023-11-06  :  :User has chosen: go left
+21:20:40 2023-11-06  :  :User has chosen: go back
+21:21:21 2023-11-06  :  :User has chosen: quit
+21:39:07 2023-11-06  :  :User has chosen: fdsa
+21:39:09 2023-11-06  :  :User has chosen: go left
+21:39:19 2023-11-06  :  :User has chosen: quit
+21:40:33 2023-11-06  :  :User has chosen: gdsa
+21:40:34 2023-11-06  :  :User has chosen: go left
+21:40:45 2023-11-06  :  :User has chosen: go back
+21:40:53 2023-11-06  :  :User has chosen: quit
+21:43:13 2023-11-06  :  :User has chosen: fdsa
+21:43:17 2023-11-06  :  :User has chosen: go straight
+21:43:22 2023-11-06  :  :User has chosen: fo f
+21:43:26 2023-11-06  :  :User has chosen: go back
+21:43:38 2023-11-06  :  :User has chosen: quit
+21:44:35 2023-11-06  :  :User has chosen: fdsa
+21:44:36 2023-11-06  :  :User has chosen: go left
+21:44:39 2023-11-06  :  :User has chosen: fdsa
+21:44:43 2023-11-06  :  :User has chosen: go back
+21:44:48 2023-11-06  :  :User has chosen: go back
+21:44:53 2023-11-06  :  :User has chosen: go straight
+21:44:56 2023-11-06  :  :User has chosen: go back
+21:45:01 2023-11-06  :  :User has chosen: go left
+21:45:33 2023-11-06  :  :User has chosen: quit
+21:56:26 2023-11-06  :  :User has chosen: fdsaf
+21:56:29 2023-11-06  :  :User has chosen: go left
+21:56:32 2023-11-06  :  :User has chosen: go fdsa
+21:56:35 2023-11-06  :  :User has chosen: go back
+21:57:02 2023-11-06  :  :User has chosen: go straight
+21:57:06 2023-11-06  :  :User has chosen: go back
+21:57:08 2023-11-06  :  :User has chosen: go left
+21:57:12 2023-11-06  :  :User has chosen: go back
+21:57:15 2023-11-06  :  :User has chosen: go right
+21:57:19 2023-11-06  :  :User has chosen: quit
+22:07:15 2023-11-06  :  :User has chosen: fdsa
+22:10:41 2023-11-06  :  :User has chosen: fds
+22:10:46 2023-11-06  :  :User has chosen: go left
+22:10:51 2023-11-06  :  :User has chosen: go back
+22:11:02 2023-11-06  :  :User has chosen: go straight
+22:11:20 2023-11-06  :  :User has chosen: quit
+22:13:18 2023-11-06  :  :User has chosen: go right
+22:13:27 2023-11-06  :  :User has chosen: go back
+22:13:31 2023-11-06  :  :User has chosen: go straight
+22:13:33 2023-11-06  :  :User has chosen: quit
+17:12:35 2023-11-07  :  :User has chosen: fdsa
+17:12:38 2023-11-07  :  :User has chosen: fdsa
+17:12:41 2023-11-07  :  :User has chosen: go right
+17:12:44 2023-11-07  :  :User has chosen: go back
+17:12:47 2023-11-07  :  :User has chosen: go straight
+17:12:49 2023-11-07  :  :User has chosen: go back 
+17:12:53 2023-11-07  :  :User has chosen: go back

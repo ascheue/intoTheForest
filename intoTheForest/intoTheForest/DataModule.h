@@ -1,3 +1,6 @@
+#ifndef DATAMODULE_H
+#define DATAMODULE_H
+
 #include <unordered_map>
 #include <string>
 
@@ -16,3 +19,5 @@ public:
 
     void printAll() const; // Print all key-value pairs
 };
+
+#endif //DATAMODULE_H
