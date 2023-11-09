@@ -74,10 +74,10 @@ int main()
             //if(!playerIsBusy) {
             nextMove = world.gatherUserInput();     //literally just gets the input
             //this is the navigation block, examining what the user inputs
-            if(currentTile.getCurrentTileID() == 0) {currentTile.equals(startingTile.moveToNextTile(nextMove));}
-            else if(currentTile.getCurrentTileID() == 1) {currentTile.equals(tile1a.moveToNextTile(nextMove));}
-            else if(currentTile.getCurrentTileID() == 2) {currentTile.equals(tile1b.moveToNextTile(nextMove));}
-            else if(currentTile.getCurrentTileID() == 3) {currentTile.equals(tile1c.moveToNextTile(nextMove));}
+            if(currentTile.getCurrentTileID() == startingTile.getCurrentTileID()) {currentTile.equals(startingTile.moveToNextTile(nextMove));}
+            else if(currentTile.getCurrentTileID() == tile1a.getCurrentTileID()) {currentTile.equals(tile1a.moveToNextTile(nextMove));}
+            else if(currentTile.getCurrentTileID() == tile1b.getCurrentTileID()) {currentTile.equals(tile1b.moveToNextTile(nextMove));}
+            else if(currentTile.getCurrentTileID() == tile1c.getCurrentTileID()) {currentTile.equals(tile1c.moveToNextTile(nextMove));}
             //}
         }
         std::cout << currentTile.getCurrentTileID() << std::endl;
