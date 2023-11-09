@@ -1,5 +1,5 @@
 #include <iostream>
-//#include "Logger.h"
+#include "Logger.h"
 #include "DataModule.h"
 #include "World.h"
 #include "StartingTile.h"
@@ -10,10 +10,9 @@
 
 int main()
 {
+    Logger* logger = Logger::getInstance();
+    logger->log("New Run---------------------------------------------------------------------------------------------------------------------------------------------------------------");
     bool isPlaying = 1;
-    //testing the Logger
-    //Logger* logger = Logger::getInstance();
-    //logger->log("This is a test to see if we can write to a file0");
 
     //testing the DataModule
     DataModule dm;
@@ -28,59 +27,60 @@ int main()
     Tile1A tile1a;
     Tile1B tile1b;
     Tile1C tile1c;
+    logger->log("Classes loaded!");
 
+    //bool playerIsBusy = false;
+    //std::string input;  //this needs to be renamed: lines 51, 56, 61
     std::string nextMove;
     currentTile.equals(startingTile);
-
+    //std::cout << currentTile.pathIsClear[1] << std::endl;
     while(isPlaying)
     {
-
-        nextMove = world.gatherUserInput();     //literally just gets the input
-        if(nextMove == "quit"){
+        if(nextMove == "quit")
+        {
             std::cout << "User has ended game." << std::endl;
             isPlaying = 0;
         }
-        else{
-            switch (currentTile.getCurrentTileID()) {
-                case 0: //moves from the starting tile
-                    if(nextMove == currentTile.listOfNavigations[0])      {currentTile.equals(tile1a);}
-                    else if(nextMove == currentTile.listOfNavigations[1]) {currentTile.equals(tile1b);}
-                    else if(nextMove == currentTile.listOfNavigations[2]) {currentTile.equals(tile1c);}
-                    else std::cout << "selection not found" << std::endl;
-                    break;
-                case 1: //moves from tile1a
-                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
-                    else std::cout << "selection not found1" << std::endl;
-                    break;
-                case 2: //moves from tile1b
-                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
-                    else std::cout << "selection not found2" << std::endl;
-                    break;
-                case 3: //moves from tile1c
-                    if(nextMove == currentTile.listOfNavigations[0]) {currentTile.equals(startingTile);}
-                    else std::cout << "selection not found3" << std::endl;
-                    break;
-                default:
-                    break;
-            }
-            switch (currentTile.getCurrentTileID()) {
+        else
+        {
+            //if(playerIsBusy){
+            switch (currentTile.getCurrentTileID()) 
+            {
                 case 0: //we are on starting tile
                     startingTile.displayText();
                     break;
                 case 1: //we are on tile1a
+                    //playerIsBusy = true;
                     tile1a.displayText();
+                    //if(playerIsBusy) {input = world.gatherUserInput();}
+                    //if(input=="leave") {playerIsBusy == false;}
                     break;
                 case 2: //we are on tile1b
+                    //playerIsBusy = true;
                     tile1b.displayText();
+                    //if(playerIsBusy) {input = world.gatherUserInput();}
+                    //if(input=="leave") {playerIsBusy == false;}
                     break;
                 case 3: //we are on tile1c
+                    //playerIsBusy = true;
                     tile1c.displayText();
+                    //if(playerIsBusy) {input = world.gatherUserInput();}
+                    //if(input=="leave") {playerIsBusy == false;}
                     break;
                 default:
                     break;
+            //}
             }
+            //if(!playerIsBusy) {
+            nextMove = world.gatherUserInput();     //literally just gets the input
+            //this is the navigation block, examining what the user inputs
+            if(currentTile.getCurrentTileID() == startingTile.getCurrentTileID()) {currentTile.equals(startingTile.moveToNextTile(nextMove));}
+            else if(currentTile.getCurrentTileID() == tile1a.getCurrentTileID()) {currentTile.equals(tile1a.moveToNextTile(nextMove));}
+            else if(currentTile.getCurrentTileID() == tile1b.getCurrentTileID()) {currentTile.equals(tile1b.moveToNextTile(nextMove));}
+            else if(currentTile.getCurrentTileID() == tile1c.getCurrentTileID()) {currentTile.equals(tile1c.moveToNextTile(nextMove));}
+            //}
         }
-        std::cout << currentTile.tileID << std::endl;
+        std::cout << currentTile.getCurrentTileID() << std::endl;
 
     }
     return 0;

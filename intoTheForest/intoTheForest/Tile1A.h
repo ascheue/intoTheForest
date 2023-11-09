@@ -7,8 +7,7 @@ class Tile1A : public World {
 public:
     Tile1A();
 
-    void displayText() override;
-    void moveToNextTile(World& currentTile, std::string tileSelection) override;
+    World moveToNextTile(std::string tileSelection) override;
 private:
 };
 
