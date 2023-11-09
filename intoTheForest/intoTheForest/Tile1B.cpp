@@ -13,10 +13,15 @@ Tile1B::Tile1B() {
     //listOfNavigations = std::vector<std::string>();
 
     listOfNavigations.push_back("go back");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     
     welcomeMessage = "Welcome to Tile1B";
     revisitMessage = "You are back at Tile1B";
@@ -25,18 +30,18 @@ Tile1B::Tile1B() {
     hasBeenVisited = 0;
 }
 
-void Tile1B::displayText() {
-    if(!hasBeenVisited){
-        std::cout << welcomeMessage << std::endl;
+World Tile1B::moveToNextTile(std::string tileSelection) {
+    StartingTile startingTile;
+    Tile1B tile1b;
+    if(tileSelection == listOfNavigations[0]){
+        if(pathIsClear[0]) {return startingTile;}
+        else{std::cout << "You must clear the path first!" << std::endl;}
+        return tile1b;
     }
-    else if(hasBeenVisited){
-        std::cout << revisitMessage << std::endl;
+    else{
+        std::cout << "Selection Not Found!!" << std::endl;
+        return tile1b;
     }
-    hasBeenVisited = 1;
-}
-
-void Tile1B::moveToNextTile(World& yourCurrentTile, std::string tileSelection) {
-
 }
 
 

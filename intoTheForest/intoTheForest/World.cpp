@@ -13,7 +13,13 @@ World::World() {
 }
 
 void World::displayText() {
-    //Welcome!!!
+    if(!hasBeenVisited){
+        std::cout << welcomeMessage << std::endl;
+    }
+    else if(hasBeenVisited){
+        std::cout << revisitMessage << std::endl;
+    }
+    hasBeenVisited = 1;
 }
 
 std::string World::gatherUserInput() {
@@ -26,7 +32,7 @@ std::string World::gatherUserInput() {
     return response;
 }
 
-World World::getCurrentWorld() {
+World World::getCurrentWorld() {    //does not currently work
     World newWorld;
     try{
         return newWorld;
@@ -54,6 +60,42 @@ std::string World::getCurrentTileName() {
     }
 }
 
+int World::getNumAdjacents() {
+    try{
+        return numAdjacents;
+    }
+    catch(std::exception& e) {
+        logger->log("getNumAdjacents returned something bad: " + std::string(e.what()));
+    }
+}
+
+int World::getNumNavigations() {
+    try{
+        return numNavigations;
+    }
+    catch(std::exception& e) {
+        logger->log("getNumNavigations returned something bad: " + std::string(e.what()));
+    }
+}
+
+std::string World::getNavigation(int i) {
+    try{
+        return listOfNavigations[i];
+    }
+    catch(std::exception& e) {
+        logger->log("getNavigation returned something bad: " + std::string(e.what()));
+    }
+}
+
+bool World::isPathClear(int i) {
+    try{
+        return pathIsClear[i];
+    }
+    catch(std::exception& e) {
+        logger->log("isPathClear returned something bad: " + std::string(e.what()));
+    }
+}
+
 bool World::tileIsAdjacent(World tile) {
     return false;
 }
@@ -64,11 +106,15 @@ void World::equals(const World& otherWorld) {
     numAdjacents = otherWorld.numAdjacents;
     //actionsToAdvanceTile = otherWorld.actionsToAdvanceTile;
     listOfNavigations = otherWorld.listOfNavigations;
+    pathIsClear = otherWorld.pathIsClear;
     isCurrentLevel = otherWorld.isCurrentLevel;
     hasBeenVisited = otherWorld.hasBeenVisited;
     welcomeMessage = otherWorld.welcomeMessage;
     revisitMessage = otherWorld.revisitMessage;
 }
 
-void World::moveToNextTile(World& currentTile, std::string tileSelection) {}
+World World::moveToNextTile(std::string tileSelection) {
+    World world;
+    return world;
+}
 

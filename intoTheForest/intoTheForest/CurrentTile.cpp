@@ -12,10 +12,15 @@ CurrentTile::CurrentTile() {
     //listOfNavigations = std::vector<std::string>();
 
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
     listOfNavigations.push_back("");
+    pathIsClear.push_back(true);
 
     welcomeMessage = "error: CurrentTile Welcome messsage";
     revisitMessage = "error: CurrentTile revisit message";
@@ -24,18 +29,9 @@ CurrentTile::CurrentTile() {
     hasBeenVisited = 0;
 }
 
-void CurrentTile::displayText() {
-    if(!hasBeenVisited){
-        std::cout << welcomeMessage << std::endl;
-    }
-    else if(hasBeenVisited){
-        std::cout << revisitMessage << std::endl;
-    }
-    hasBeenVisited = 1;
-}
-
-void CurrentTile::moveToNextTile(World& yourCurrentTile, std::string tileSelection) {
-
+World CurrentTile::moveToNextTile(std::string tileSelection) {
+    CurrentTile currentTile;
+    return currentTile;
 }
 
 
