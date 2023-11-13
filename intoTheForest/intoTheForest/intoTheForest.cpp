@@ -7,6 +7,8 @@
 #include "Tile1A.h"
 #include "Tile1B.h"
 #include "Tile1C.h"
+#include "Player.h"
+#include "Vendor.h"
 
 int main()
 {
@@ -20,67 +22,80 @@ int main()
     //dm.add("2ndKey",   2);
     //dm.printAll();
 
-    //testing the world module
     World world;
     CurrentTile currentTile;
     StartingTile startingTile;
     Tile1A tile1a;
     Tile1B tile1b;
     Tile1C tile1c;
+    Player player;
+    Vendor vendor;
     logger->log("Classes loaded!");
 
-    //bool playerIsBusy = false;
-    //std::string input;  //this needs to be renamed: lines 51, 56, 61
-    std::string nextMove;
     currentTile.equals(startingTile);
-    //std::cout << currentTile.pathIsClear[1] << std::endl;
     while(isPlaying)
     {
-        if(nextMove == "quit")
+        if(world.getNextMove() == "quit" || player.getNextMove() == "quit")//next move
         {
             std::cout << "User has ended game." << std::endl;
             isPlaying = 0;
         }
         else
         {
-            //if(playerIsBusy){
-            switch (currentTile.getCurrentTileID()) 
+            if(player.getIsBusy())      //quit condition doesnt work in this loop
             {
-                case 0: //we are on starting tile
-                    startingTile.displayText();
-                    break;
-                case 1: //we are on tile1a
-                    //playerIsBusy = true;
-                    tile1a.displayText();
-                    //if(playerIsBusy) {input = world.gatherUserInput();}
-                    //if(input=="leave") {playerIsBusy == false;}
-                    break;
-                case 2: //we are on tile1b
-                    //playerIsBusy = true;
-                    tile1b.displayText();
-                    //if(playerIsBusy) {input = world.gatherUserInput();}
-                    //if(input=="leave") {playerIsBusy == false;}
-                    break;
-                case 3: //we are on tile1c
-                    //playerIsBusy = true;
-                    tile1c.displayText();
-                    //if(playerIsBusy) {input = world.gatherUserInput();}
-                    //if(input=="leave") {playerIsBusy == false;}
-                    break;
-                default:
-                    break;
-            //}
+                switch (currentTile.getCurrentTileID())
+                {
+                    case 0: //we are on starting tile
+                        startingTile.displayText();
+                        player.setNextMove(player.gatherUserInput());
+                        break;
+                    case 1: //we are on tile1a
+                        tile1a.displayText();
+                        tile1a.setNextAction(player.gatherUserInput());
+                        player.setNextMove(tile1a.getNextAction()); //this resets player.isBusy, but causes double print when waiting on tile, needs to be reiviewd TODO:
+                        if(tile1a.getNextAction() == "approach") {vendor.interact();}
+                        else if(tile1a.getNextAction() == "leave") {player.setIsBusy(false);}
+                        break;
+                    case 2: //we are on tile1b
+                        tile1b.displayText();
+                        player.setNextMove(player.gatherUserInput());
+                        break;
+                    case 3: //we are on tile1c
+                        tile1c.displayText();
+                        player.setNextMove(player.gatherUserInput());
+                        break;
+                    default:
+                        break;
+                }
             }
-            //if(!playerIsBusy) {
-            nextMove = world.gatherUserInput();     //literally just gets the input
-            //this is the navigation block, examining what the user inputs
-            if(currentTile.getCurrentTileID() == startingTile.getCurrentTileID()) {currentTile.equals(startingTile.moveToNextTile(nextMove));}
-            else if(currentTile.getCurrentTileID() == tile1a.getCurrentTileID()) {currentTile.equals(tile1a.moveToNextTile(nextMove));}
-            else if(currentTile.getCurrentTileID() == tile1b.getCurrentTileID()) {currentTile.equals(tile1b.moveToNextTile(nextMove));}
-            else if(currentTile.getCurrentTileID() == tile1c.getCurrentTileID()) {currentTile.equals(tile1c.moveToNextTile(nextMove));}
-            //}
+            if(!player.getIsBusy()) 
+            {
+                //int temp = currentTile.getCurrentTileID();
+                std::cout << "Where would you like to go?" <<  std::endl;
+                std::cout << currentTile.navMessage <<  std::endl;
+                world.setNextMove(world.gatherUserInput());     //literally just gets the input, next move
+                //this is the navigation block, examining what the user inputs
+                if(currentTile.getCurrentTileID() == startingTile.getCurrentTileID()) {
+                    currentTile.equals(startingTile.moveToNextTile(world.getNextMove()));
+                    player.setIsBusy(true);
+                }
+                else if(currentTile.getCurrentTileID() == tile1a.getCurrentTileID()) {
+                    currentTile.equals(tile1a.moveToNextTile(world.getNextMove()));
+                    player.setIsBusy(true);
+                }
+                else if(currentTile.getCurrentTileID() == tile1b.getCurrentTileID()) {
+                    currentTile.equals(tile1b.moveToNextTile(world.getNextMove()));
+                    player.setIsBusy(true);
+                }
+                else if(currentTile.getCurrentTileID() == tile1c.getCurrentTileID()) {
+                    currentTile.equals(tile1c.moveToNextTile(world.getNextMove()));
+                    player.setIsBusy(true);
+                }
+                //if(temp != currentTile.getCurrentTileID()) {player.setIsBusy(true);}
+            }
         }
-        std::cout << currentTile.getCurrentTileID() << std::endl;
+        //std::cout << currentTile.getCurrentTileID() << std::endl; //troubleshooting
 
     }
     return 0;

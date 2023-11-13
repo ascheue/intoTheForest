@@ -2,6 +2,7 @@
 #include "StartingTile.h"
 #include "CurrentTile.h"
 #include "Tile1A.h"
+#include "Player.h"
 #include <iostream>
 
 Tile1A::Tile1A() {
@@ -23,11 +24,21 @@ Tile1A::Tile1A() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "Welcome to Tile1A";
-    revisitMessage = "You are back at Tile1A";
+    welcomeMessage = "Welcome to Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[leave]";
+    revisitMessage = "You are back at Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[leave]";
+    navMessage = "[go back]";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
+}
+
+std::string Tile1A::gatherUserInput() {
+    std::string response;
+
+    std::cout << "What would you like to do?" << std::endl;
+    std::cout << "[leave]" << std::endl;
+    std::getline(std::cin, response);
+    return response;
 }
 
 World Tile1A::moveToNextTile(std::string tileSelection) {
@@ -44,4 +55,16 @@ World Tile1A::moveToNextTile(std::string tileSelection) {
     }
 }
 
+void Tile1A::setNextAction(std::string action) {
+    Player player;
+    nextAction = action;
+    if(action == "wait") {std::cout << "Your character waits in place, fun1" << std::endl;}
+    else if(action == "leave") {player.setIsBusy(false);}
+    else if(action == "approach") {player.setIsEngaged(true);}
+    else {std::cout << "Selection Not Found!4" << std::endl;}
+}
+
+std::string Tile1A::getNextAction() {
+    return nextAction;
+}
 

@@ -23,12 +23,15 @@ protected:
     bool hasBeenVisited;
     std::string welcomeMessage;
     std::string revisitMessage;
+    
+    std::string nextAction;
     //std::map<std::string, World> actionsToAdvanceTile;
 public:
+    std::string navMessage;
     World();
 
     void displayText();
-    std::string gatherUserInput();
+    virtual std::string gatherUserInput();
 
     virtual World getCurrentWorld();
     virtual std::string getCurrentTileName();
@@ -36,12 +39,16 @@ public:
     virtual int getNumAdjacents();
     virtual int getNumNavigations();
     virtual std::string getNavigation(int i);
+    virtual std::string getNextMove();
+    virtual void setNextMove(std::string move);
     //virtual World getListOfAdjacents();
     
     virtual bool isPathClear(int i);
     virtual bool tileIsAdjacent(World tile);
     void equals(const World& otherWorld);
     virtual World moveToNextTile(std::string tileSelection);
+    virtual void setNextAction(std::string action);
+    virtual std::string getNextAction();
 
 };
 

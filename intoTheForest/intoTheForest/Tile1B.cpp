@@ -23,8 +23,9 @@ Tile1B::Tile1B() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
     
-    welcomeMessage = "Welcome to Tile1B";
-    revisitMessage = "You are back at Tile1B";
+    welcomeMessage = "Welcome to Tile1B.  What would you like to do?\n[wait]\n[leave]";
+    revisitMessage = "You are back at Tile1B.  What would you like to do?\n[wait]\n[leave]";
+    navMessage = "[go back]";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
