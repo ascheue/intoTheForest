@@ -9,6 +9,7 @@
 #include "Tile1C.h"
 #include "Player.h"
 #include "Vendor.h"
+#include "ArmorFactory.cpp"
 
 int main()
 {
@@ -31,8 +32,48 @@ int main()
     Player player;
     Vendor vendor;
     logger->log("Classes loaded!");
-
     currentTile.equals(startingTile);
+    //------------------------------------------------------------------------------------
+    player.characterSelectionPrompt();
+    std::string CharacterClass;
+	std::getline(std::cin, CharacterClass);
+	Armor* factory = nullptr;
+
+	if (CharacterClass == "Warrior") {
+		factory = new WarriorArmor();
+	}
+	else if (CharacterClass == "Mage") {
+		factory = new MageArmor();
+	}
+	else if (CharacterClass == "Ranger") {
+		factory = new RangerArmor();
+	}
+	else {
+		cout << "You always dreamed of being a " << CharacterClass << " but alas, your parents would never allow it.\n";
+		return 1;
+	}
+	if (factory) {
+		Head* head = factory->createHead();
+		Chest* chest = factory->createChest();
+		Legs* legs = factory->createLegs();
+		Boots* boots = factory->createBoots();
+		Weapon* weapon = factory->createWeapon();
+
+		head->createHead();
+		chest->createChest();
+		legs->createLegs();
+		boots->createBoots();
+		weapon->createWeapon();
+
+		delete head;
+		delete chest;
+		delete legs;
+		delete boots;
+		delete weapon;
+		delete factory;
+    }
+    std::cout << player.defenceStat << std::endl;
+    //------------------------------------------------------------------------------------
     while(isPlaying)
     {
         if(world.getNextMove() == "quit" || player.getNextMove() == "quit")//next move

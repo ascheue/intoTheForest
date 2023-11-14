@@ -4,8 +4,10 @@
 
 Logger* logger1 = Logger::getInstance();
 
-
 Player::Player() {
+    playerHealth = 100;
+    defenceStat = 0;
+    attackStat = 0;
     busyOnTile = true;
 
     inventory.push_back("");
@@ -13,6 +15,10 @@ Player::Player() {
     inventory.push_back("");
     inventory.push_back("");
     inventory.push_back("");
+}
+
+void Player::characterSelectionPrompt() {
+    std::cout << "Please select a player class\n[Warrior]\n[Mage]\n[Ranger]" << std::endl;
 }
 
 bool Player::getIsBusy() {

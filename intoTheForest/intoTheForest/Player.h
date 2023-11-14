@@ -14,7 +14,11 @@ class Player
         std::string nextMove;
         std::vector<std::string> inventory;
     public:
+        float playerHealth;
+        int defenceStat;
+        int attackStat;
         Player();
+        void characterSelectionPrompt();
         bool getIsBusy();
         void setIsBusy(bool busy);
         bool getIsEngaged();
