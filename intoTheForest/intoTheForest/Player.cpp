@@ -1,12 +1,13 @@
 #include "Player.h"
 #include "Logger.h"
+#include "ArmorFactory.cpp"
 #include <iostream>
 
 Logger* logger1 = Logger::getInstance();
 
 Player::Player() {
     playerHealth = 100;
-    defenceStat = 0;
+    defenseStat = 0;
     attackStat = 0;
     busyOnTile = true;
 

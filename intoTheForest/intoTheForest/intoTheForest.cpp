@@ -11,6 +11,7 @@
 #include "Vendor.h"
 #include "ArmorFactory.cpp"
 
+
 int main()
 {
     Logger* logger = Logger::getInstance();
@@ -53,26 +54,29 @@ int main()
 		return 1;
 	}
 	if (factory) {
-		Head* head = factory->createHead();
-		Chest* chest = factory->createChest();
-		Legs* legs = factory->createLegs();
-		Boots* boots = factory->createBoots();
-		Weapon* weapon = factory->createWeapon();
+		Head* head = factory->createHead(player);
+		Chest* chest = factory->createChest(player);
+		Legs* legs = factory->createLegs(player);
+		Boots* boots = factory->createBoots(player);
+		Weapon* weapon = factory->createWeapon(player);
 
-		head->createHead();
-		chest->createChest();
-		legs->createLegs();
-		boots->createBoots();
-		weapon->createWeapon();
+		head->createHead(player);
+		chest->createChest(player);
+		legs->createLegs(player);
+		boots->createBoots(player);
+		weapon->createWeapon(player);
 
-		delete head;
+	    delete head;
 		delete chest;
 		delete legs;
 		delete boots;
 		delete weapon;
 		delete factory;
     }
-    std::cout << player.defenceStat << std::endl;
+    std::cout << "Defense:" << std::endl;
+    std::cout << player.defenseStat << std::endl;
+    std::cout << "Attack:" << std::endl;
+    std::cout << player.attackStat << std::endl;
     //------------------------------------------------------------------------------------
     while(isPlaying)
     {

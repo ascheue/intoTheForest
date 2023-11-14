@@ -15,7 +15,7 @@ class Player
         std::vector<std::string> inventory;
     public:
         float playerHealth;
-        int defenceStat;
+        int defenseStat;
         int attackStat;
         Player();
         void characterSelectionPrompt();

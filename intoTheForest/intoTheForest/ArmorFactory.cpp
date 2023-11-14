@@ -7,204 +7,241 @@
 #include <vector>
 #include <map>
 #include "Player.h"
+//#include "intoTheForest.cpp"
 
-//Player unique_player;
+//Player player;
 using namespace std;
 
 class Head {
 public:
-	virtual void createHead() = 0;
+	virtual void createHead(Player& player) = 0;
+	int warriorHeadDefenseStat = 1;
+	int mageHeadDefenseStat = 2;
+	int rangerHeadDefenseStat = 3;
 };
+
+class Chest {
+public:
+	virtual void createChest(Player& player) = 0;
+	int warriorCheseDefenseStat = 4;
+	int mageChestDefenseStat = 5;
+	int rangerChestDefenseStat = 6;
+};
+
+class Legs {
+public:
+	virtual void createLegs(Player& player) = 0;
+	int warriorLegDefenseStat = 7;
+	int mageLegDefenseStat = 8;
+	int rangerLegDefenseStat = 9;
+};
+
+class Boots {
+public:
+	virtual void createBoots(Player& player) = 0;
+	int warriorBootDefenseStat = 10;
+	int mageBootDefenseStat = 11;
+	int rangerBootDefenseStat = 12;
+};
+
+class Weapon {
+public:
+	virtual void createWeapon(Player& player) = 0;
+	int warriorWeaponAttackStat= 3;
+	int mageWeaponAttackStat = 1;
+	int rangerWeaponAttackStat = 2;
+};
+
 
 class WarriorHead : public Head {
 public:
-	void createHead() override {
+	void createHead(Player &player) override {
 		cout << "Metal Helmet\n";
-		//player.defenceStat = player.defenceStat + 3;
+		player.defenseStat = player.defenseStat + warriorHeadDefenseStat;
 	}
 };
 
 class MageHead : public Head {
 public:
-	void createHead() override {
+	void createHead(Player &player) override {
 		cout << "Wizard Hat\n";
-		//player.defenceStat = player.defenceStat + 1;
+		player.defenseStat = player.defenseStat + mageHeadDefenseStat;
 	}
 };
 
 class RangerHead : public Head {
 public:
-	void createHead() override {
+	void createHead(Player &player) override {
 		cout << "Pointy Cap\n";
-		//player.defenceStat = player.defenceStat + 2;
+		player.defenseStat = player.defenseStat + rangerHeadDefenseStat;
 	}
 };
 
-class Chest {
-public:
-	virtual void createChest() = 0;
-};
+
 
 class WarriorChest : public Chest {
 public:
-	void createChest() override {
+	void createChest(Player& player) override {
 		cout << "Chainmail Armor\n";
+		player.defenseStat = player.defenseStat + warriorCheseDefenseStat;
 	}
 };
 
 class MageChest : public Chest {
 public:
-	void createChest() override {
+	void createChest(Player& player) override {
 		cout << "Wizard's Robes\n";
+		player.defenseStat = player.defenseStat + mageChestDefenseStat;
 	}
 };
 
 class RangerChest : public Chest {
 public:
-	void createChest() override {
+	void createChest(Player& player) override {
 		cout << "Leather Cuirass\n";
+		player.defenseStat = player.defenseStat + rangerChestDefenseStat;
 	}
 };
 
-class Legs {
-public:
-	virtual void createLegs() = 0;
-};
+
 
 class WarriorLegs : public Legs {
 public:
-	void createLegs() override {
+	void createLegs(Player& player) override {
 		cout << "Chainmail Leggings\n";
+		player.defenseStat = player.defenseStat + warriorLegDefenseStat;
 	}
 };
 
 class MageLegs : public Legs {
 public:
-	void createLegs()  override {
+	void createLegs(Player& player)  override {
 		cout << "Wizard Pants\n";
+		player.defenseStat = player.defenseStat + mageLegDefenseStat;
 	}
 };
 
 class RangerLegs : public Legs {
 public:
-	void createLegs()  override {
+	void createLegs(Player& player)  override {
 		cout << "Leather Leggings\n";
+		player.defenseStat = player.defenseStat + rangerLegDefenseStat;
 	}
 };
 
-class Boots {
-public:
-	virtual void createBoots() = 0;
-};
+
 
 class WarriorBoots : public Boots {
 public:
-	void createBoots() override {
+	void createBoots(Player& player) override {
 		cout << "Metal Boots\n";
+		player.defenseStat = player.defenseStat + warriorBootDefenseStat;
 	}
 };
 
 class MageBoots : public Boots {
 public:
-	void createBoots()  override {
+	void createBoots(Player& player)  override {
 		cout << "Wizard Boots\n";
+		player.defenseStat = player.defenseStat + mageBootDefenseStat;
 	}
 };
 
 class RangerBoots : public Boots {
 public:
-	void createBoots()  override {
+	void createBoots(Player& player)  override {
 		cout << "Leather Boots\n";
+		player.defenseStat = player.defenseStat + rangerBootDefenseStat;
 	}
 };
 
-class Weapon {
-public:
-	virtual void createWeapon() = 0;
-};
+
 
 class WarriorWeapon : public Weapon {
 public:
-	void createWeapon() override {
+	void createWeapon(Player& player) override {
 		cout << "Metal Sword\n";
+		player.attackStat = player.attackStat + warriorWeaponAttackStat;
 	}
 };
 
 class MageWeapon : public Weapon {
 public:
-	void createWeapon()  override {
+	void createWeapon(Player& player)  override {
 		cout << "Magical Staff\n";
+		player.attackStat = player.attackStat + mageWeaponAttackStat;
 	}
 };
 
 class RangerWeapon : public Weapon {
 public:
-	void createWeapon()  override {
+	void createWeapon(Player& player)  override {
 		cout << "Hunter's Bow\n";
+		player.attackStat = player.attackStat + rangerWeaponAttackStat;
 	}
 };
 
 class Armor {
 public:
-	virtual Head* createHead() const = 0;
-	virtual Chest* createChest() const = 0;
-	virtual Legs* createLegs() const = 0;
-	virtual Boots* createBoots() const = 0;
-	virtual Weapon* createWeapon() const = 0;
+	virtual Head* createHead(Player &player) const = 0;
+	virtual Chest* createChest(Player& player) const = 0;
+	virtual Legs* createLegs(Player& player) const = 0;
+	virtual Boots* createBoots(Player& player) const = 0;
+	virtual Weapon* createWeapon(Player& player) const = 0;
 };
 
 class WarriorArmor : public Armor {
 public:
-	Head* createHead() const override {
+	Head* createHead(Player &player) const override {
 		return new WarriorHead();
 	};
-	Chest* createChest() const override {
+	Chest* createChest(Player& player) const override {
 		return new WarriorChest();
 	};
-	Legs* createLegs() const override {
+	Legs* createLegs(Player& player) const override {
 		return new WarriorLegs();
 	};
-	Boots* createBoots() const override {
+	Boots* createBoots(Player& player) const override {
 		return new WarriorBoots();
 	};
-	Weapon* createWeapon() const override {
+	Weapon* createWeapon(Player& player) const override {
 		return new WarriorWeapon();
 	};
 };
 class MageArmor : public Armor {
 public:
-	Head* createHead() const override {
+	Head* createHead(Player &player) const override {
 		return new MageHead();
 	};
-	Chest* createChest() const override {
+	Chest* createChest(Player& player) const override {
 		return new MageChest();
 	};
-	Legs* createLegs() const override {
+	Legs* createLegs(Player& player) const override {
 		return new MageLegs();
 	};
-	Boots* createBoots() const override {
+	Boots* createBoots(Player& player) const override {
 		return new MageBoots();
 	};
-	Weapon* createWeapon() const override {
+	Weapon* createWeapon(Player& player) const override {
 		return new MageWeapon();
 	};
 };
 
 class RangerArmor : public Armor {
 public:
-	Head* createHead() const override {
+	Head* createHead(Player &player) const override {
 		return new RangerHead();
 	};
-	Chest* createChest() const override {
+	Chest* createChest(Player& player) const override {
 		return new RangerChest();
 	};
-	Legs* createLegs() const override {
+	Legs* createLegs(Player& player) const override {
 		return new RangerLegs();
 	};
-	Boots* createBoots() const override {
+	Boots* createBoots(Player& player) const override {
 		return new RangerBoots();
 	};
-	Weapon* createWeapon() const override {
+	Weapon* createWeapon(Player& player) const override {
 		return new RangerWeapon();
 	};
 };
