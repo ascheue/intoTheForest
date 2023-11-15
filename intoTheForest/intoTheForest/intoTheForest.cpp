@@ -7,6 +7,7 @@
 #include "Tile1A.h"
 #include "Tile1B.h"
 #include "Tile1C.h"
+#include "Tile2C.h"
 #include "Player.h"
 #include "Vendor.h"
 #include "ArmorFactory.cpp"
@@ -30,6 +31,7 @@ int main()
     Tile1A tile1a;
     Tile1B tile1b;
     Tile1C tile1c;
+    Tile2C tile2c;
     Player player;
     Vendor vendor;
     logger->log("Classes loaded!");
@@ -110,6 +112,10 @@ int main()
                         tile1c.displayText();
                         player.setNextMove(player.gatherUserInput());
                         break;
+                    case 4: //we are on tile1c
+                        tile2c.displayText();
+                        player.setNextMove(player.gatherUserInput());
+                        break;
                     default:
                         break;
                 }
@@ -135,6 +141,10 @@ int main()
                 }
                 else if(currentTile.getCurrentTileID() == tile1c.getCurrentTileID()) {
                     currentTile.equals(tile1c.moveToNextTile(world.getNextMove()));
+                    player.setIsBusy(true);
+                }
+                else if(currentTile.getCurrentTileID() == tile2c.getCurrentTileID()) {
+                    currentTile.equals(tile2c.moveToNextTile(world.getNextMove()));
                     player.setIsBusy(true);
                 }
                 //if(temp != currentTile.getCurrentTileID()) {player.setIsBusy(true);}

@@ -1,3 +1,2 @@
-﻿  Player.cpp
-C:\Users\ascheuer\Desktop\Alex Stuff\My Docs\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(54): warning C4715: 'Player::getNextMove': not all control paths return a value
-  intoTheForest.vcxproj -> C:\Users\ascheuer\Desktop\Alex Stuff\My Docs\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe
+﻿  Tile1C.cpp
+  intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe

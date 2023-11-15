@@ -44,6 +44,7 @@ public:
     //virtual World getListOfAdjacents();
     
     virtual bool isPathClear(int i);
+    virtual void clearPathForward(int i);
     virtual bool tileIsAdjacent(World tile);
     void equals(const World& otherWorld);
     virtual World moveToNextTile(std::string tileSelection);

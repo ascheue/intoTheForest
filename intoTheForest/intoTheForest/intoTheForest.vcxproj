@@ -137,6 +137,7 @@
     <ClCompile Include="Tile1A.cpp" />
     <ClCompile Include="Tile1B.cpp" />
     <ClCompile Include="Tile1C.cpp" />
+    <ClCompile Include="Tile2C.cpp" />
     <ClCompile Include="Vendor.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="Tile1A.h" />
     <ClInclude Include="Tile1B.h" />
     <ClInclude Include="Tile1C.h" />
+    <ClInclude Include="Tile2C.h" />
     <ClInclude Include="Vendor.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>

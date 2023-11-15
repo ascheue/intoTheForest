@@ -47,7 +47,7 @@ public:
 class Weapon {
 public:
 	virtual void createWeapon(Player& player) = 0;
-	int warriorWeaponAttackStat= 3;
+	int warriorWeaponAttackStat = 3;
 	int mageWeaponAttackStat = 1;
 	int rangerWeaponAttackStat = 2;
 };

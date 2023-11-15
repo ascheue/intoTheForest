@@ -110,6 +110,10 @@ bool World::isPathClear(int i) {
     }
 }
 
+void World::clearPathForward(int i) {
+    pathIsClear[i] = true;
+}
+
 bool World::tileIsAdjacent(World tile) {
     return false;
 }
