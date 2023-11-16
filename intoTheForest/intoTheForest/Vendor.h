@@ -10,7 +10,7 @@ protected:
 public:
 	Vendor();
 
-	std::vector<std::string> invnetoryStrings;
+	std::vector<std::string> inventoryStrings;
 	void interact();
 };
 
