@@ -1,11 +1,8 @@
-﻿  Vendor.cpp
+﻿  intoTheForest.cpp
   Generating code
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\World.cpp(89): warning C4715: 'World::getNavigation': not all control paths return a value
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\World.cpp(98): warning C4715: 'World::getNextMove': not all control paths return a value
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\World.cpp(62): warning C4715: 'World::getCurrentTileName': not all control paths return a value
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(54): warning C4715: 'Player::getNextMove': not all control paths return a value
-  454 of 616 functions (73.7%) were compiled, the rest were copied from previous compilation.
-    260 functions were new in current compilation
-    27 functions had inline decision re-evaluated but remain unchanged
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(109): warning C4715: 'Player::containsInInventory': not all control paths return a value
+  2 of 636 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Release\intoTheForest.exe

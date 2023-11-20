@@ -6,9 +6,12 @@
 Logger* logger1 = Logger::getInstance();
 
 Player::Player() {
+    playerClass = "";
     playerHealth = 100;
     defenseStat = 0;
     attackStat = 0;
+    wallet = 0;
+    inventorySize = 5;
     busyOnTile = true;
 
     inventory.push_back("");
@@ -33,6 +36,23 @@ bool Player::getIsBusy() {
 
 void Player::setIsBusy(bool busy) {
     busyOnTile = busy;
+}
+
+int Player::getWallet() {
+    try{
+        return wallet;
+    }
+    catch(std::exception& e) {
+        logger1->log("getWallet returned something bad: " + std::string(e.what()));
+    }
+}
+
+void Player::setWallet(int money) {
+    wallet = money;
+}
+
+void Player::addToWallet(int addition){
+    wallet = wallet + addition;
 }
 
 std::string Player::gatherUserInput() {
@@ -72,4 +92,47 @@ void Player::setNextMove(std::string move) {
     else if(move == "leave") {busyOnTile = false;}
     //else if(move == "approach") {currentlyEngaged = true;} //CAREFUL!! this variable is never reset!!!
     //else {std::cout << "Selection Not Found!4" << std::endl;}
+}
+
+void Player::addToInventory(std::string item) {
+    for(int i=0;i<sizeof(inventory);i++){
+        if(inventory[i] == ""){
+            inventory[i] = item;
+            return;
+        }
+    }
+    inventory.push_back(item);
+}
+
+bool Player::containsInInventory(std::string item) {
+    for(int i=0;i<inventorySize;i++){
+        if(inventory[i] == item) {return true;}
+    }
+    return false;
+}
+
+int Player::getPlayerHealth() {
+    try{
+        return playerHealth;
+    }
+    catch(std::exception& e) {
+        logger1->log("getPlayerHealth returned something bad: " + std::string(e.what()));
+    }
+}
+
+void Player::setPlayerHealth(int health) {
+    playerHealth = health;
+}
+
+std::string Player::getPlayerClass() {
+    try{
+        return playerClass;
+    }
+    catch(std::exception& e) {
+        logger1->log("getPlayerClass returned something bad: " + std::string(e.what()));
+    }
+}
+
+void Player::setPlayerClass(std::string newClass) {
+    playerClass = newClass;
 }

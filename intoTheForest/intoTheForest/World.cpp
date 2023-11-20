@@ -97,10 +97,6 @@ std::string World::getNextMove() {
     }
 }
 
-void World::setNextMove(std::string move) {
-    nextAction = move;
-}
-
 bool World::isPathClear(int i) {
     try{
         return pathIsClear[i];

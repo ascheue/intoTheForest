@@ -31,11 +31,11 @@ Tile1C::Tile1C() {
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
 }
-/*
+
 void Tile1C::clearPathForward(int i) {
     pathIsClear[i] = true;
 }
-*/
+
 World Tile1C::moveToNextTile(std::string tileSelection) {
     StartingTile startingTile;
     Tile1C tile1c;

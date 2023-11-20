@@ -1,23 +1,2 @@
-﻿  Vendor.cpp
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(7,5): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(8,5): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(9,5): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(10,5): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(11,5): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(23,12): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(25,12): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(27,12): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(29,12): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(31,12): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(35,24): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(35,46): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(36,29): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(36,51): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(37,29): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(37,51): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(38,29): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(38,51): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(39,29): error C2065: 'invnetoryStrings': undeclared identifier
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(39,51): error C2065: 'invnetoryStrings': undeclared identifier
-  intoTheForest.cpp
-  Generating Code...
+﻿  NonCutes.cpp
+  intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe

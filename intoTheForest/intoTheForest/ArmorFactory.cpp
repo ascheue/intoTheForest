@@ -15,41 +15,41 @@ using namespace std;
 class Head {
 public:
 	virtual void createHead(Player& player) = 0;
-	int warriorHeadDefenseStat = 1;
+	int warriorHeadDefenseStat = 3;
 	int mageHeadDefenseStat = 2;
-	int rangerHeadDefenseStat = 3;
+	int rangerHeadDefenseStat = 2;
 };
 
 class Chest {
 public:
 	virtual void createChest(Player& player) = 0;
-	int warriorCheseDefenseStat = 4;
-	int mageChestDefenseStat = 5;
-	int rangerChestDefenseStat = 6;
+	int warriorCheseDefenseStat = 5;
+	int mageChestDefenseStat = 2;
+	int rangerChestDefenseStat = 4;
 };
 
 class Legs {
 public:
 	virtual void createLegs(Player& player) = 0;
-	int warriorLegDefenseStat = 7;
-	int mageLegDefenseStat = 8;
-	int rangerLegDefenseStat = 9;
+	int warriorLegDefenseStat = 5;
+	int mageLegDefenseStat = 2;
+	int rangerLegDefenseStat = 4;
 };
 
 class Boots {
 public:
 	virtual void createBoots(Player& player) = 0;
-	int warriorBootDefenseStat = 10;
-	int mageBootDefenseStat = 11;
-	int rangerBootDefenseStat = 12;
+	int warriorBootDefenseStat = 5;
+	int mageBootDefenseStat = 2;
+	int rangerBootDefenseStat = 4;
 };
 
 class Weapon {
 public:
 	virtual void createWeapon(Player& player) = 0;
-	int warriorWeaponAttackStat = 3;
-	int mageWeaponAttackStat = 1;
-	int rangerWeaponAttackStat = 2;
+	int warriorWeaponAttackStat = 5;
+	int mageWeaponAttackStat = 10;
+	int rangerWeaponAttackStat = 7;
 };
 
 

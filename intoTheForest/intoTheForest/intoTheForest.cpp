@@ -10,6 +10,7 @@
 #include "Tile2C.h"
 #include "Player.h"
 #include "Vendor.h"
+#include "NonCutes.h"
 #include "ArmorFactory.cpp"
 
 
@@ -34,13 +35,15 @@ int main()
     Tile2C tile2c;
     Player player;
     Vendor vendor;
+    NonCutes nonCute;
     logger->log("Classes loaded!");
     currentTile.equals(startingTile);
     //------------------------------------------------------------------------------------
     player.characterSelectionPrompt();
     std::string CharacterClass;
 	std::getline(std::cin, CharacterClass);
-	Armor* factory = nullptr;
+	player.setPlayerClass(CharacterClass);
+    Armor* factory = nullptr;
 
 	if (CharacterClass == "Warrior") {
 		factory = new WarriorArmor();
@@ -99,20 +102,20 @@ int main()
                         break;
                     case 1: //we are on tile1a
                         tile1a.displayText();
-                        tile1a.setNextAction(player.gatherUserInput());
-                        player.setNextMove(tile1a.getNextAction()); //this resets player.isBusy, but causes double print when waiting on tile, needs to be reiviewd TODO:
-                        if(tile1a.getNextAction() == "approach") {vendor.interact();}
-                        else if(tile1a.getNextAction() == "leave") {player.setIsBusy(false);}
+                        player.setNextMove(player.gatherUserInput());
+                        if(player.getNextMove() == "approach") {vendor.interact(player);}
                         break;
                     case 2: //we are on tile1b
                         tile1b.displayText();
                         player.setNextMove(player.gatherUserInput());
+                        if (player.getNextMove() == "interact") { nonCute.interact(player); }
                         break;
                     case 3: //we are on tile1c
                         tile1c.displayText();
+                        if (player.containsInInventory("pickaxe")) { tile1c.clearPathForward(1); }  //pickaxe check
                         player.setNextMove(player.gatherUserInput());
                         break;
-                    case 4: //we are on tile1c
+                    case 4: //we are on tile2c
                         tile2c.displayText();
                         player.setNextMove(player.gatherUserInput());
                         break;
@@ -125,7 +128,7 @@ int main()
                 //int temp = currentTile.getCurrentTileID();
                 std::cout << "Where would you like to go?" <<  std::endl;
                 std::cout << currentTile.navMessage <<  std::endl;
-                world.setNextMove(world.gatherUserInput());     //literally just gets the input, next move
+                world.setNextAction(world.gatherUserInput());     //literally just gets the input, next move
                 //this is the navigation block, examining what the user inputs
                 if(currentTile.getCurrentTileID() == startingTile.getCurrentTileID()) {
                     currentTile.equals(startingTile.moveToNextTile(world.getNextMove()));

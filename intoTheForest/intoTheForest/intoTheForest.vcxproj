@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArmorFactory.cpp" />
+    <ClCompile Include="Creature.cpp" />
     <ClCompile Include="CurrentTile.cpp" />
     <ClCompile Include="DataModule.cpp" />
     <ClCompile Include="intoTheForest.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="NonCutes.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StartingTile.cpp" />
     <ClCompile Include="Tile1A.cpp" />
@@ -142,9 +144,11 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Creature.h" />
     <ClInclude Include="CurrentTile.h" />
     <ClInclude Include="DataModule.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="NonCutes.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="StartingTile.h" />
     <ClInclude Include="Tile1A.h" />

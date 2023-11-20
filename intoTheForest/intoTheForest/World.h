@@ -40,7 +40,7 @@ public:
     virtual int getNumNavigations();
     virtual std::string getNavigation(int i);
     virtual std::string getNextMove();
-    virtual void setNextMove(std::string move);
+    //virtual void setNextMove(std::string move);
     //virtual World getListOfAdjacents();
     
     virtual bool isPathClear(int i);

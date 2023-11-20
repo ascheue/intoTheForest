@@ -1,6 +1,7 @@
 #ifndef VENDOR_H
 #define VENDOR_H
 
+#include "Player.h"
 #include <string>
 #include <vector>
 
@@ -11,7 +12,9 @@ public:
 	Vendor();
 
 	std::vector<std::string> inventoryStrings;
-	void interact();
+	std::vector<int> prices;
+	void interact(Player& player);
+	bool checkForMoney(Player& player, int slot);
 };
 
 #endif
