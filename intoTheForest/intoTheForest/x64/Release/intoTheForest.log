@@ -1,8 +1,30 @@
-﻿  intoTheForest.cpp
+﻿  ArmorFactory.cpp
+  Creature.cpp
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Creature.cpp(18,27): warning C4101: 'e': unreferenced local variable
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Creature.cpp(31,27): warning C4101: 'e': unreferenced local variable
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Creature.cpp(44,27): warning C4101: 'e': unreferenced local variable
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Creature.cpp(59,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+  CurrentTile.cpp
+  NonCutes.cpp
+  Player.cpp
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(116,16): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(124,20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  StartingTile.cpp
+  Tile1A.cpp
+  Tile1B.cpp
+  Tile1C.cpp
+  Tile2C.cpp
+  Vendor.cpp
+  World.cpp
+  intoTheForest.cpp
   Generating code
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(109): warning C4715: 'Player::containsInInventory': not all control paths return a value
-  2 of 636 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(74): warning C4715: 'Player::getNextMove': not all control paths return a value
+  229 of 703 functions (32.6%) were compiled, the rest were copied from previous compilation.
+    68 functions were new in current compilation
+    82 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Release\intoTheForest.exe

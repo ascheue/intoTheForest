@@ -8,11 +8,13 @@
 class Vendor {
 private:
 protected:
+	int inventorySize;
 public:
 	Vendor();
 
 	std::vector<std::string> inventoryStrings;
 	std::vector<int> prices;
+	void displayInventory(Player& player);
 	void interact(Player& player);
 	bool checkForMoney(Player& player, int slot);
 };

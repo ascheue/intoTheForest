@@ -10,7 +10,7 @@ Player::Player() {
     playerHealth = 100;
     defenseStat = 0;
     attackStat = 0;
-    wallet = 0;
+    wallet = 25;
     inventorySize = 5;
     busyOnTile = true;
 

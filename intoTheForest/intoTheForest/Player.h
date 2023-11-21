@@ -40,6 +40,7 @@ class Player
         void setNextMove(std::string move);
         void addToInventory(std::string item);
         bool containsInInventory(std::string item);
+        //void displayInventory()
 };
 
 #endif
