@@ -17,6 +17,10 @@ public:
 	void displayInventory(Player& player);
 	void interact(Player& player);
 	bool checkForMoney(Player& player, int slot);
+	void addToInventory(std::string item);
+	void sellToPlayer(Player& player);
+	void buyFromPlayer(Player& player);
+	
 };
 
 #endif

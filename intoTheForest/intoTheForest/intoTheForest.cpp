@@ -82,6 +82,7 @@ int main()
     std::cout << player.defenseStat << std::endl;
     std::cout << "Attack:" << std::endl;
     std::cout << player.attackStat << std::endl;
+    player.displayInventory();
     //------------------------------------------------------------------------------------
     while(isPlaying)
     {

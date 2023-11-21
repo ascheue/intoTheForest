@@ -14,11 +14,16 @@ Player::Player() {
     inventorySize = 5;
     busyOnTile = true;
 
+    inventory.push_back("healthPotion");
+    sellingPrices.push_back(5);
     inventory.push_back("");
+    sellingPrices.push_back(0);
     inventory.push_back("");
+    sellingPrices.push_back(0);
     inventory.push_back("");
+    sellingPrices.push_back(0);
     inventory.push_back("");
-    inventory.push_back("");
+    sellingPrices.push_back(0);
 }
 
 void Player::characterSelectionPrompt() {
@@ -104,11 +109,31 @@ void Player::addToInventory(std::string item) {
     inventory.push_back(item);
 }
 
+void Player::removeFromInventory(std::string item) {
+    for(int i=0; i<sizeof(inventory); i++){     //this sizeof() may cause issues
+        if(inventory[i] == item){
+            inventory[i] = "";
+        }
+        else{
+            std::cout <<"removeFromInventory could not find" << item << "in inventory!!" << std::endl;
+        }
+    }
+}
+
 bool Player::containsInInventory(std::string item) {
     for(int i=0;i<inventorySize;i++){
         if(inventory[i] == item) {return true;}
     }
     return false;
+}
+
+void Player::displayInventory() {
+    std::cout << "Player Inventory: " << std::endl;
+    std::cout << "-" << inventory[0] << std::endl;
+    std::cout << "-" << inventory[1] << std::endl;
+    std::cout << "-" << inventory[2] << std::endl;
+    std::cout << "-" << inventory[3] << std::endl;
+    std::cout << "-" << inventory[4] << std::endl;
 }
 
 int Player::getPlayerHealth() {
@@ -135,4 +160,17 @@ std::string Player::getPlayerClass() {
 
 void Player::setPlayerClass(std::string newClass) {
     playerClass = newClass;
+}
+
+int Player::getInventorySize() {
+    try{
+        return inventorySize;
+    }
+    catch(std::exception& e) {
+        logger1->log("getInventorySize returned something bad: " + std::string(e.what()));
+    }
+}
+
+void Player::setInventorySize(int size) {
+    inventorySize = size;
 }

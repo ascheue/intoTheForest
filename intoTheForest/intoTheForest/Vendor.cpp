@@ -18,7 +18,7 @@ Vendor::Vendor() {
     inventorySize = 5;
 }
 
-void Vendor::displayInventory(Player& player) {
+void Vendor::displayInventory(Player& player) {             //this function does not need an input Player& player
     std::cout << "What would you like to purchase?" << std::endl;
     if(inventoryStrings[0] == "") {std::cout << "" << std::endl;}
     else {std::cout << "some Bullshit.............$5" << std::endl;}
@@ -35,11 +35,42 @@ void Vendor::displayInventory(Player& player) {
 }
 
 void Vendor::interact(Player& player) {
+    std::cout << "What would you like to do?\n[Buy]\n[Sell]" << std::endl;
+    std::string input = player.gatherUserInput();
+    if(input == "Buy"){
+        sellToPlayer(player);
+    }
+    else if(input == "Sell"){
+        buyFromPlayer(player);
+    }
+    else {
+        std::cout << "You wanna what??" << std::endl;
+    }
+    
+}
+
+bool Vendor::checkForMoney(Player& player, int slot) {
+    if(player.getWallet() >= prices[slot]){
+        return true;
+    }
+    return false;
+}
+
+void Vendor::addToInventory(std::string item) {
+    for(int i=0;i<sizeof(inventoryStrings);i++){
+        if(inventoryStrings[i] == ""){
+            inventoryStrings[i] = item;
+            return;
+        }
+    }
+    inventoryStrings.push_back(item);
+}
+
+void Vendor::sellToPlayer(Player& player) {
     bool busy = true;
     bool itemFound;
-    std::cout << "in interact loop" << std::endl;
     while(busy){
-        displayInventory(player);
+        displayInventory(player);                       //this function does not need an input Player& player
         std::string response = player.gatherUserInput();
 
         for(int i=0; i<inventorySize; i++){
@@ -61,9 +92,16 @@ void Vendor::interact(Player& player) {
     }
 }
 
-bool Vendor::checkForMoney(Player& player, int slot) {
-    if(player.getWallet() >= prices[slot]){
-        return true;
+void Vendor::buyFromPlayer(Player& player) {
+    bool busy = true;
+    while(busy){
+        std::cout << "What would you like to sell?" << std::endl;
+        player.displayInventory();
+        std::string response = player.gatherUserInput();
+
+        for(int i=0; i<player.getInventorySize(); i++){
+            //if(response == inventoryStrings[i])               //WIP
+        }
+        if(response == "leave") {busy = false;}
     }
-    return false;
 }

@@ -19,6 +19,7 @@ class Player
         
     public:
         std::vector<std::string> inventory; //to make this protected will take modifiying vendor class
+        std::vector<int> sellingPrices;
              //TODO: make these protected
         int defenseStat;
         int attackStat;
@@ -39,8 +40,11 @@ class Player
         std::string getNextMove();
         void setNextMove(std::string move);
         void addToInventory(std::string item);
+        void removeFromInventory(std::string item);
         bool containsInInventory(std::string item);
-        //void displayInventory()
+        void displayInventory();
+        int getInventorySize();
+        void setInventorySize(int size);
 };
 
 #endif
