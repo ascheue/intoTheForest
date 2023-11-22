@@ -37,11 +37,11 @@ int main()
     Vendor vendor;
     NonCutes nonCute;
     logger->log("Classes loaded!");
-    currentTile.equals(startingTile);
+    currentTile.equals(tile1a);
     //------------------------------------------------------------------------------------
     player.characterSelectionPrompt();
-    std::string CharacterClass;
-	std::getline(std::cin, CharacterClass);
+    std::string CharacterClass = "Mage";
+	//std::getline(std::cin, CharacterClass);
 	player.setPlayerClass(CharacterClass);
     Armor* factory = nullptr;
 

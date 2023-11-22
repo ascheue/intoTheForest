@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Logger.h"
 #include "ArmorFactory.cpp"
+//#include "Vendor.h"
 #include <iostream>
 
 Logger* logger1 = Logger::getInstance();
@@ -100,7 +101,7 @@ void Player::setNextMove(std::string move) {
 }
 
 void Player::addToInventory(std::string item) {
-    for(int i=0;i<sizeof(inventory);i++){
+    for(int i=0;i<inventorySize;i++){
         if(inventory[i] == ""){
             inventory[i] = item;
             return;
@@ -109,15 +110,24 @@ void Player::addToInventory(std::string item) {
     inventory.push_back(item);
 }
 
-void Player::removeFromInventory(std::string item) {
-    for(int i=0; i<sizeof(inventory); i++){     //this sizeof() may cause issues
-        if(inventory[i] == item){
-            inventory[i] = "";
-        }
-        else{
-            std::cout <<"removeFromInventory could not find" << item << "in inventory!!" << std::endl;
+int Player::addToInventoryAndReturnSlot(std::string item) {
+    for(int i=0;i<inventorySize;i++){
+        if(inventory[i] == ""){
+            inventory[i] = item;
+            return i;
         }
     }
+    inventory.push_back(item);
+}
+
+void Player::removeFromInventory(std::string item) {
+    for(int i=0; i<inventorySize; i++){
+        if(inventory[i] == item){
+            inventory[i] = "";
+            return;
+        }
+    }
+    std::cout <<"removeFromInventory could not find " << item << " in inventory!!" << std::endl;
 }
 
 bool Player::containsInInventory(std::string item) {
@@ -127,13 +137,40 @@ bool Player::containsInInventory(std::string item) {
     return false;
 }
 
+void Player::sellItem(std::string item) {
+    for(int i=0; i<inventorySize; i++){
+        if(inventory[i] == item){
+            inventory[i] = "";
+            addToWallet(sellingPrices[i]);
+            return;
+        }
+        std::cout << "sellItem could not find " << item << " in inventory!!2" << std::endl;
+    }
+}
+
+int Player::sellItemAndReturnSlot(std::string item) {
+    for(int i=0; i<inventorySize; i++){
+        if(inventory[i] == item){
+            inventory[i] = "";
+            addToWallet(sellingPrices[i]);
+            //sellingPrices[i] = 0;
+            return i;
+        }
+        std::cout << "sellItem could not find " << item << " in inventory!!2" << std::endl;
+    }
+}
+
 void Player::displayInventory() {
     std::cout << "Player Inventory: " << std::endl;
-    std::cout << "-" << inventory[0] << std::endl;
-    std::cout << "-" << inventory[1] << std::endl;
-    std::cout << "-" << inventory[2] << std::endl;
-    std::cout << "-" << inventory[3] << std::endl;
-    std::cout << "-" << inventory[4] << std::endl;
+    
+    for(int i=0;i<inventorySize;i++){
+        std::cout << "-" << inventory[i] << ": $" << sellingPrices[i] << std::endl;
+    }
+    
+    //std::cout << "-" << inventory[1] << std::endl;
+    //std::cout << "-" << inventory[2] << std::endl;
+    //std::cout << "-" << inventory[3] << std::endl;
+    //std::cout << "-" << inventory[4] << std::endl;
 }
 
 int Player::getPlayerHealth() {

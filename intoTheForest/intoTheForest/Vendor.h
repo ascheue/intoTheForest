@@ -18,6 +18,8 @@ public:
 	void interact(Player& player);
 	bool checkForMoney(Player& player, int slot);
 	void addToInventory(std::string item);
+	int addToInventoryAndReturnSlot(std::string item);
+	void removeFromInventory(std::string item);
 	void sellToPlayer(Player& player);
 	void buyFromPlayer(Player& player);
 	

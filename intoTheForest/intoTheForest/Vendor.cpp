@@ -1,6 +1,6 @@
 #include "Vendor.h"
 #include "World.h"
-#include "Player.h"
+//#include "Player.h"
 #include <iostream>
 
 Vendor::Vendor() {
@@ -20,7 +20,11 @@ Vendor::Vendor() {
 
 void Vendor::displayInventory(Player& player) {             //this function does not need an input Player& player
     std::cout << "What would you like to purchase?" << std::endl;
-    if(inventoryStrings[0] == "") {std::cout << "" << std::endl;}
+    for(int i=0; i<inventorySize; i++){
+        if(inventoryStrings[i] == "") {std::cout << "" << prices[i] << std::endl;}
+        else {std::cout << inventoryStrings[i] << ": $" << prices[i] << std::endl;}
+    }
+    /*if(inventoryStrings[0] == "") {std::cout << "" << std::endl;}
     else {std::cout << "some Bullshit.............$5" << std::endl;}
     if(inventoryStrings[1] == "") {std::cout << "" << std::endl;}
     else {std::cout << "some other Bullshit.......$10" << std::endl;}
@@ -29,7 +33,7 @@ void Vendor::displayInventory(Player& player) {             //this function does
     if(inventoryStrings[3] == "") {std::cout << "" << std::endl;}
     else {std::cout << "" << std::endl;}
     if(inventoryStrings[4] == "") {std::cout << "" << std::endl;}
-    else {std::cout << "" << std::endl;}
+    else {std::cout << "" << std::endl;}*/
     std::cout << "Player Wallet: " << player.getWallet() << std::endl;
     std::cout << "[leave]" << std::endl;
 }
@@ -57,19 +61,44 @@ bool Vendor::checkForMoney(Player& player, int slot) {
 }
 
 void Vendor::addToInventory(std::string item) {
-    for(int i=0;i<sizeof(inventoryStrings);i++){
+    for(int i=0;i<inventorySize;i++){
         if(inventoryStrings[i] == ""){
             inventoryStrings[i] = item;
+
             return;
         }
     }
     inventoryStrings.push_back(item);
 }
 
+int Vendor::addToInventoryAndReturnSlot(std::string item) {
+    for(int i=0;i<inventorySize;i++){
+        if(inventoryStrings[i] == ""){
+            inventoryStrings[i] = item;
+
+            return i;
+        }
+    }
+    inventoryStrings.push_back(item);
+}
+
+void Vendor::removeFromInventory(std::string item) {
+    for(int i=0; i<inventorySize; i++){     //this sizeof() may cause issues
+        if(inventoryStrings[i] == item){
+            inventoryStrings[i] = "";
+            return;
+        }
+        std::cout <<"removeFromInventory could not find " << item << " in inventory!!1" << std::endl;
+
+    }
+}
+
+//Buy
 void Vendor::sellToPlayer(Player& player) {
     bool busy = true;
-    bool itemFound;
+    bool itemFound = false;
     while(busy){
+        player.displayInventory();
         displayInventory(player);                       //this function does not need an input Player& player
         std::string response = player.gatherUserInput();
 
@@ -77,9 +106,14 @@ void Vendor::sellToPlayer(Player& player) {
             if(response == inventoryStrings[i]) {
                 itemFound = true;
                 if(checkForMoney(player, i)) {
-                    player.addToInventory(response);
+                    int slot = player.addToInventoryAndReturnSlot(response);
+                    player.sellingPrices[slot] = prices[i];
                     inventoryStrings[i] = "";
                     player.addToWallet(prices[i]*-1);
+                    prices[i] = 0;
+
+                    //player.sellingPrices[i] = 
+
                 }
                 else{
                     std::cout << "cant afford bitch!" << std::endl;
@@ -92,15 +126,23 @@ void Vendor::sellToPlayer(Player& player) {
     }
 }
 
+//Sell
 void Vendor::buyFromPlayer(Player& player) {
     bool busy = true;
     while(busy){
         std::cout << "What would you like to sell?" << std::endl;
         player.displayInventory();
+        displayInventory(player);
         std::string response = player.gatherUserInput();
 
         for(int i=0; i<player.getInventorySize(); i++){
-            //if(response == inventoryStrings[i])               //WIP
+            if(response == player.inventory[i]) {
+                int slot = addToInventoryAndReturnSlot(response);
+                //int slot1 = player.sellItemAndReturnSlot(response);
+                player.sellItem(response);
+                prices[slot] = player.sellingPrices[i];
+                player.sellingPrices[i] = 0;
+            }
         }
         if(response == "leave") {busy = false;}
     }

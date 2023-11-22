@@ -40,8 +40,11 @@ class Player
         std::string getNextMove();
         void setNextMove(std::string move);
         void addToInventory(std::string item);
+        int addToInventoryAndReturnSlot(std::string item);
         void removeFromInventory(std::string item);
         bool containsInInventory(std::string item);
+        void sellItem(std::string item);
+        int sellItemAndReturnSlot(std::string item);
         void displayInventory();
         int getInventorySize();
         void setInventorySize(int size);

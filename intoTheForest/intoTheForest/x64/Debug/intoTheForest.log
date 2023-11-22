@@ -1,2 +1,11 @@
-﻿  Vendor.cpp
-  intoTheForest.vcxproj -> C:\Users\ascheuer\Desktop\Alex Stuff\My Docs\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe
+﻿  Player.cpp
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(178,16): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(186,20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Vendor.cpp
+  Generating Code...
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(83): warning C4715: 'Vendor::addToInventoryAndReturnSlot': not all control paths return a value
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(80): warning C4715: 'Player::getNextMove': not all control paths return a value
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(121): warning C4715: 'Player::addToInventoryAndReturnSlot': not all control paths return a value
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(161): warning C4715: 'Player::sellItemAndReturnSlot': not all control paths return a value
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Player.cpp(196): warning C4715: 'Player::getPlayerClass': not all control paths return a value
+  intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe
