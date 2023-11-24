@@ -9,9 +9,11 @@ public:
     Tile1C();
 
     //std::string gatherUserInput() override;
+    //void displayText();
     void clearPathForward(int i);
     World moveToNextTile(std::string tileSelection) override;
 private:
+    //std::string revisitMessageAfterClearingPath;
 };
 
 #endif

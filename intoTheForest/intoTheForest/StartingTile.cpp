@@ -26,8 +26,8 @@ StartingTile::StartingTile() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "Welcome to the Starting Tile.  What would you like to do?\n[wait]\n[leave]";
-    revisitMessage = "You are back at the starting tile.  What would you like to do?\n[wait]\n[leave]";
+    welcomeMessage = "Welcome to the Starting Tile.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+    revisitMessage = "You are back at the starting tile.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
     navMessage = "[go left]\n[go straight]\n[go right]";
 
     isCurrentLevel = 1; //may not need
@@ -69,7 +69,7 @@ World StartingTile::moveToNextTile(std::string tileSelection) {
     }
 }
 
-void StartingTile::setNextAction(std::string action) {
+void StartingTile::setNextAction(std::string action) {  //this function is never called, same with other tiles
     Player player;
     nextAction = action;
     if(action == "wait") {std::cout << "Your character waits in place, fun3" << std::endl;}
@@ -77,5 +77,5 @@ void StartingTile::setNextAction(std::string action) {
     else if(action == "approach") {player.setIsEngaged(true);}
     else {std::cout << "Selection Not Found!4" << std::endl;}
 }
-
+ 
 

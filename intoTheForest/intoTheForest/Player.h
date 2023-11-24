@@ -43,11 +43,16 @@ class Player
         int addToInventoryAndReturnSlot(std::string item);
         void removeFromInventory(std::string item);
         bool containsInInventory(std::string item);
+        int returnInventorySlot(std::string item);
         void sellItem(std::string item);
         int sellItemAndReturnSlot(std::string item);
         void displayInventory();
+        void useItem(std::string item);
+        void displayInventoryForItemUse();
         int getInventorySize();
         void setInventorySize(int size);
+        void useHealthPotion25();
+        void displayPlayerCombatPrompt();
 };
 
 #endif

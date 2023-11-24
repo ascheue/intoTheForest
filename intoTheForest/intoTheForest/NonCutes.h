@@ -9,6 +9,7 @@ protected:
 public:
     NonCutes();
     void interact(Player &player) override;
+    void engageInCombat(Player &player) override;
 };
 
 #endif

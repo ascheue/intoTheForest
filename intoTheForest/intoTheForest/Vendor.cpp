@@ -18,8 +18,8 @@ Vendor::Vendor() {
     inventorySize = 5;
 }
 
-void Vendor::displayInventory(Player& player) {             //this function does not need an input Player& player
-    std::cout << "What would you like to purchase?" << std::endl;
+void Vendor::displayInventory() {
+    std::cout << "Vendor Inventory:" << std::endl;
     for(int i=0; i<inventorySize; i++){
         if(inventoryStrings[i] == "") {std::cout << "" << prices[i] << std::endl;}
         else {std::cout << inventoryStrings[i] << ": $" << prices[i] << std::endl;}
@@ -34,8 +34,6 @@ void Vendor::displayInventory(Player& player) {             //this function does
     else {std::cout << "" << std::endl;}
     if(inventoryStrings[4] == "") {std::cout << "" << std::endl;}
     else {std::cout << "" << std::endl;}*/
-    std::cout << "Player Wallet: " << player.getWallet() << std::endl;
-    std::cout << "[leave]" << std::endl;
 }
 
 void Vendor::interact(Player& player) {
@@ -83,7 +81,7 @@ int Vendor::addToInventoryAndReturnSlot(std::string item) {
 }
 
 void Vendor::removeFromInventory(std::string item) {
-    for(int i=0; i<inventorySize; i++){     //this sizeof() may cause issues
+    for(int i=0; i<inventorySize; i++){ 
         if(inventoryStrings[i] == item){
             inventoryStrings[i] = "";
             return;
@@ -98,8 +96,9 @@ void Vendor::sellToPlayer(Player& player) {
     bool busy = true;
     bool itemFound = false;
     while(busy){
+        displayInventory();
         player.displayInventory();
-        displayInventory(player);                       //this function does not need an input Player& player
+        std::cout << "[leave]" << std::endl; 
         std::string response = player.gatherUserInput();
 
         for(int i=0; i<inventorySize; i++){
@@ -121,7 +120,7 @@ void Vendor::sellToPlayer(Player& player) {
             }
         }
         if(response == "leave") {busy = false;}
-        if(!itemFound) {std::cout << "Selection Not Found" << std::endl;}
+        else if(!itemFound) {std::cout << "Selection Not Found" << std::endl;}
         itemFound = false;
     }
 }
@@ -131,8 +130,8 @@ void Vendor::buyFromPlayer(Player& player) {
     bool busy = true;
     while(busy){
         std::cout << "What would you like to sell?" << std::endl;
-        player.displayInventory();
-        displayInventory(player);
+        displayInventory();
+        player.displayInventory();  
         std::string response = player.gatherUserInput();
 
         for(int i=0; i<player.getInventorySize(); i++){

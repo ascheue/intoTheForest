@@ -12,19 +12,45 @@ NonCutes::NonCutes() {
 }
 
 void NonCutes::interact(Player &player) {
-    std::cout << "The creature Turns hostile, what will you do?" << std::endl;
-    std::cout << "[flee]\n[attack]" << std::endl;
+    std::cout << "The creature Turns hostile, what will you do?\n[flee]\n[attack]" << std::endl;
     std::string response = player.gatherUserInput();
-    bool inCombat = false;
-    if(response == "attack") {inCombat = true;}
-    while(inCombat){                        //I say we get rid of this loop, then write a separate function for nonCutes.engageInCombat(Player& player)
-        int rand = getRandom(10);
-        std::cout << "Random number: " << rand << std::endl;
+    if(response == "attack") {
+        engageInCombat(player);
+    }
+    else if(response == "flee") {std::cout << "You successfully escape the creature" << std::endl;}
+    else {std::cout << "you wanna do what?" << std::endl;}
+}
 
-        if(response == "flee") {inCombat = false;}
-        inCombat = false;
+/*This function is a WIP!!!!  -ascheuer*/
+void NonCutes::engageInCombat(Player& player) {
+    std::cout << "Engaged in combat" << std::endl;
+    bool busy = true;
+    bool playerTurn = rollForTrueFalse(80);     //the player character gets to go first 80% of the time 
+    while(busy) {
+        if(playerTurn) {
+            player.displayPlayerCombatPrompt();
+            std::string response = player.gatherUserInput();
+            if(response == "attack") {
+                if(rollForTrueFalse(90)) {health = health - player.attackStat;}
+                else {std::cout << "Attack missed!" << std::endl;}
+                std::cout << "Enemy health: " << health << std::endl;
+            }
+            else if(response == "inventory") {
+                player.displayInventoryForItemUse();
+                //playerTurn = false;
+            }
+        }
+        else if(!playerTurn) {
+
+        }
+        //int random = rollForTrueFalse(100);
+        //std::cout << random << std::endl;
     }
 }
+
+//then a different function for deadNonCuteInteract(Player& player)
+//this would make it so that we can do a flag check to see if the thing 
+//is alive, then choose the appropriate interact function
 
 
 

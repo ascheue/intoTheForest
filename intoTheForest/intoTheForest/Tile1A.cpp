@@ -24,8 +24,8 @@ Tile1A::Tile1A() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "Welcome to Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[leave]";
-    revisitMessage = "You are back at Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[leave]";
+    welcomeMessage = "Welcome to Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[inventory]\n[leave]";
+    revisitMessage = "You are back at Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[inventory]\n[leave]";
     navMessage = "[go back]";
 
     isCurrentLevel = 1; //may not need

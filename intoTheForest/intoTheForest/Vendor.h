@@ -14,7 +14,7 @@ public:
 
 	std::vector<std::string> inventoryStrings;
 	std::vector<int> prices;
-	void displayInventory(Player& player);
+	void displayInventory();
 	void interact(Player& player);
 	bool checkForMoney(Player& player, int slot);
 	void addToInventory(std::string item);

@@ -24,14 +24,26 @@ Tile1C::Tile1C() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "Welcome to Tile1C.  What would you like to do?\n[wait]\n[leave]";
-    revisitMessage = "You are back at Tile1C.  What would you like to do?\n[wait]\n[leave]";
+    welcomeMessage = "Welcome to Tile1C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+    //revisitMessageAfterClearingPath = "You are back at Tile1C.  What would you like to do?\n[wait]\n[inventory]\n[attempt] to clear the rockslide\n[leave]";
+    revisitMessage = "You are back at Tile1C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+
     navMessage = "[go straight]\n[go back]";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
 }
-
+/*
+void Tile1C::displayText() {
+    if(!hasBeenVisited){
+        std::cout << welcomeMessage << std::endl;
+    }
+    else if(hasBeenVisited){
+        std::cout << revisitMessage << std::endl;
+    }
+    hasBeenVisited = 1;
+}
+*/
 void Tile1C::clearPathForward(int i) {
     pathIsClear[i] = true;
 }

@@ -20,6 +20,8 @@ public:
     virtual void setDefenseStat(int defense);
     virtual void interact(Player &player);
     virtual int getRandom(int max);
+    virtual bool rollForTrueFalse(int percentTrue);
+    virtual void engageInCombat(Player &player) = 0;
 };
 
 #endif

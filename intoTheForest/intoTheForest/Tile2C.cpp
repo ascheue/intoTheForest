@@ -24,8 +24,8 @@ Tile2C::Tile2C() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "You successfully clear the path to Tile2C.  What would you like to do?\n[wait]\n[leave]";
-    revisitMessage = "You are back at Tile2C.  What would you like to do?\n[wait]\n[leave]";
+    welcomeMessage = "You successfully clear the path to Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+    revisitMessage = "You are back at Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
     navMessage = "[go back]";
 
     isCurrentLevel = 1; //may not need

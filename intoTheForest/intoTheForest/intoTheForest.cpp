@@ -37,7 +37,7 @@ int main()
     Vendor vendor;
     NonCutes nonCute;
     logger->log("Classes loaded!");
-    currentTile.equals(tile1a);
+    currentTile.equals(tile1b);
     //------------------------------------------------------------------------------------
     player.characterSelectionPrompt();
     std::string CharacterClass = "Mage";
@@ -82,7 +82,7 @@ int main()
     std::cout << player.defenseStat << std::endl;
     std::cout << "Attack:" << std::endl;
     std::cout << player.attackStat << std::endl;
-    player.displayInventory();
+    //player.displayInventory();
     //------------------------------------------------------------------------------------
     while(isPlaying)
     {

@@ -23,12 +23,11 @@ void World::displayText() {
 }
 
 std::string World::gatherUserInput() {
-
     std::string response;
 
-    //std::cout << "Where would you like to go? " << std::endl;
     std::cout << ">> ";
     std::getline(std::cin, response);
+    std::cout << "--------------------------------------------" << std::endl;
     logger->log("User has chosen: " + response);
     return response;
 }

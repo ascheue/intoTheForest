@@ -30,7 +30,7 @@ public:
     std::string navMessage;
     World();
 
-    void displayText();
+    virtual void displayText();
     virtual std::string gatherUserInput();
 
     virtual World getCurrentWorld();

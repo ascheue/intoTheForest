@@ -62,3 +62,9 @@ int Creature::getRandom(int max) {
     return distribution(generator);
 }
 
+bool Creature::rollForTrueFalse(int percentTrue) {      //This function takes an argument (x) and will return true x% of the time 
+    int random = getRandom(100);
+    if(random <= percentTrue) {return true;}
+    return false;
+}
+
