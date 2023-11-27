@@ -155,8 +155,8 @@ void Player::sellItem(std::string item) {
             addToWallet(sellingPrices[i]);
             return;
         }
-        std::cout << "sellItem could not find " << item << " in inventory!!2" << std::endl;
     }
+    std::cout << "sellItem could not find " << item << " in inventory!!2" << std::endl;
 }
 
 int Player::sellItemAndReturnSlot(std::string item) {           //can we get rid of this function?
