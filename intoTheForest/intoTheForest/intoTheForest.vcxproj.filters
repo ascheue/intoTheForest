@@ -60,6 +60,9 @@
     <ClCompile Include="NonCutes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MageGatheringTile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logger.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NonCutes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MageGatheringTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
