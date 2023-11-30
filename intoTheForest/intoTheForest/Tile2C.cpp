@@ -24,13 +24,26 @@ Tile2C::Tile2C() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "You successfully clear the path to Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
-    revisitMessage = "You are back at Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+    welcomeMessage = "You successfully clear the path to Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[interact] with the stranger\n[leave]";
+    creatureDeadMessage = "You are back at Tile1B.  What would you like to do?\n[wait]\n[leave]\n[inventory]\n[examine] the body";
+    revisitMessage = "You are back at Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[interact] with the stranger\n[leave]";
     navMessage = "[go back]";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
 }
+
+void Tile2C::displayText(Creature& creature) {
+    if(!hasBeenVisited){
+        std::cout << welcomeMessage << std::endl;
+    }
+    else if(hasBeenVisited){
+        if(creature.getHealth()<=0) {std::cout << creatureDeadMessage << std::endl;}
+        else {std::cout << revisitMessage << std::endl;}
+    }
+    hasBeenVisited = 1;
+}
+
 /*
 void Tile1C::clearPathForward(int i) {
     pathIsClear[i] = true;

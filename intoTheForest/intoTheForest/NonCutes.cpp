@@ -16,13 +16,20 @@ NonCutes::NonCutes() {
 void NonCutes::interact(Player &player) {
     if(health == 0) {examineBody(player);}
     else {
-        std::cout << "The creature Turns hostile, what will you do?\n[flee]\n[fight]" << std::endl;
-        std::string response = player.gatherUserInput();
-        if(response == "fight") {
-            engageInCombat(player);
+        bool isSelecting = true;
+        while(isSelecting) {
+            std::cout << "The creature Turns hostile, what will you do?\n[flee]\n[fight]" << std::endl;
+            std::string response = player.gatherUserInput();
+            if(response == "fight") {
+                engageInCombat(player);
+                isSelecting = false;
+            }
+            else if(response == "flee") {
+                std::cout << "You successfully escape the creature" << std::endl;
+                isSelecting = false;
+            }
+            else {std::cout << "you wanna do what?" << std::endl;}
         }
-        else if(response == "flee") {std::cout << "You successfully escape the creature" << std::endl;}
-        else {std::cout << "you wanna do what?" << std::endl;}
     }
 }
 

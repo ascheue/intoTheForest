@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArmorFactory.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="CurrentTile.cpp" />
     <ClCompile Include="DataModule.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="CurrentTile.h" />
     <ClInclude Include="DataModule.h" />

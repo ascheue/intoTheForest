@@ -10,6 +10,7 @@ public:
 
     //std::string gatherUserInput() override;
     //void clearPathForward(int i);
+    void displayText(Creature& creature) override;
     World moveToNextTile(std::string tileSelection) override;
 private:
 };

@@ -12,6 +12,7 @@
 #include "Vendor.h"
 #include "NonCutes.h"
 #include "ArmorFactory.cpp"
+#include "Boss.h"
 
 
 int main()
@@ -36,28 +37,33 @@ int main()
     Player player;
     Vendor vendor;
     NonCutes nonCute;
+    Boss boss;
     logger->log("Classes loaded!");
-    currentTile.equals(tile1b);
+    currentTile.equals(tile2c);
     //------------------------------------------------------------------------------------
-    player.characterSelectionPrompt();
-    std::string CharacterClass = "Mage";
-	//std::getline(std::cin, CharacterClass);
-	player.setPlayerClass(CharacterClass);
     Armor* factory = nullptr;
-
-	if (CharacterClass == "Warrior") {
-		factory = new WarriorArmor();
-	}
-	else if (CharacterClass == "Mage") {
-		factory = new MageArmor();
-	}
-	else if (CharacterClass == "Ranger") {
-		factory = new RangerArmor();
-	}
-	else {
-		cout << "You always dreamed of being a " << CharacterClass << " but alas, your parents would never allow it.\n";
-		return 1;
-	}
+    std::string CharacterClass;
+	bool selectingCharacter = true;
+    while(selectingCharacter) {
+        player.characterSelectionPrompt();
+        std::getline(std::cin, CharacterClass);
+	    player.setPlayerClass(CharacterClass);
+	    if (CharacterClass == "Warrior") {
+		    factory = new WarriorArmor();
+            selectingCharacter = false;
+	    }
+	    else if (CharacterClass == "Mage") {
+		    factory = new MageArmor();
+            selectingCharacter = false;
+	    }
+	    else if (CharacterClass == "Ranger") {
+		    factory = new RangerArmor();
+            selectingCharacter = false;
+	    }
+	    else {
+		    cout << "You always dreamed of being a " << CharacterClass << " but alas, your parents would never allow it.\n";
+	    }
+    }
 	if (factory) {
 		Head* head = factory->createHead(player);
 		Chest* chest = factory->createChest(player);
@@ -82,7 +88,6 @@ int main()
     std::cout << player.defenseStat << std::endl;
     std::cout << "Attack:" << std::endl;
     std::cout << player.attackStat << std::endl;
-    //player.displayInventory();
     //------------------------------------------------------------------------------------
     while(isPlaying)
     {
@@ -107,9 +112,9 @@ int main()
                         if(player.getNextMove() == "approach") {vendor.interact(player);}
                         break;
                     case 2: //we are on tile1b
-                        tile1b.displayText();
+                        tile1b.displayText(nonCute);
                         player.setNextMove(player.gatherUserInput());
-                        if (player.getNextMove() == "interact") { nonCute.interact(player); }
+                        if (player.getNextMove() == "interact" || player.getNextMove() == "examine") { nonCute.interact(player); }
                         break;
                     case 3: //we are on tile1c
                         tile1c.displayText();
@@ -117,14 +122,20 @@ int main()
                         player.setNextMove(player.gatherUserInput());
                         break;
                     case 4: //we are on tile2c
-                        tile2c.displayText();
+                        tile2c.displayText(boss);
                         player.setNextMove(player.gatherUserInput());
+                        if (player.getNextMove() == "interact") { boss.engageInCombat(player); }
                         break;
                     default:
                         break;
                 }
+                if (player.getPlayerHealth() <= 0) {return 0;}
+                if(boss.getHealth() <= 0) {
+                    world.displayVictoryText();
+                    return 0;
+                }
             }
-            if(!player.getIsBusy()) 
+            if(!player.getIsBusy())
             {
                 //int temp = currentTile.getCurrentTileID();
                 std::cout << "Where would you like to go?" <<  std::endl;

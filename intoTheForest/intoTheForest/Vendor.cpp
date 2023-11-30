@@ -37,18 +37,22 @@ void Vendor::displayInventory() {
 }
 
 void Vendor::interact(Player& player) {
-    std::cout << "What would you like to do?\n[Buy]\n[Sell]" << std::endl;
-    std::string input = player.gatherUserInput();
-    if(input == "Buy"){
-        sellToPlayer(player);
+    bool isSelecting = true;
+    while(isSelecting) {
+        std::cout << "What would you like to do?\n[Buy]\n[Sell]" << std::endl;
+        std::string input = player.gatherUserInput();
+        if(input == "Buy"){
+            sellToPlayer(player);
+            isSelecting = false;
+        }
+        else if(input == "Sell"){
+            buyFromPlayer(player);
+            isSelecting = false;
+        }
+        else {
+            std::cout << "You wanna what??" << std::endl;
+        }
     }
-    else if(input == "Sell"){
-        buyFromPlayer(player);
-    }
-    else {
-        std::cout << "You wanna what??" << std::endl;
-    }
-    
 }
 
 bool Vendor::checkForMoney(Player& player, int slot) {
@@ -98,7 +102,7 @@ void Vendor::sellToPlayer(Player& player) {
     while(busy){
         displayInventory();
         player.displayInventory();
-        std::cout << "[leave]" << std::endl; 
+        std::cout << "[leave]" << std::endl;
         std::string response = player.gatherUserInput();
 
         for(int i=0; i<inventorySize; i++){
@@ -131,7 +135,8 @@ void Vendor::buyFromPlayer(Player& player) {
     while(busy){
         std::cout << "What would you like to sell?" << std::endl;
         displayInventory();
-        player.displayInventory();  
+        player.displayInventory();
+        std::cout << "[leave]" << std::endl;
         std::string response = player.gatherUserInput();
 
         for(int i=0; i<player.getInventorySize(); i++){

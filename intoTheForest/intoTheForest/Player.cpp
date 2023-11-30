@@ -8,7 +8,7 @@ Logger* logger1 = Logger::getInstance();
 
 Player::Player() {
     playerClass = "";
-    playerHealth = 41;
+    playerHealth = 100;
     defenseStat = 0;
     attackStat = 0;
     wallet = 25;
