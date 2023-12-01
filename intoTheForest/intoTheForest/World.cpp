@@ -22,12 +22,40 @@ void World::displayText() {
     hasBeenVisited = 1;
 }
 
-std::string World::gatherUserInput() {
+void World::displayText(Creature& creature) {
+    if(!hasBeenVisited){
+        std::cout << welcomeMessage << std::endl;
+    }
+    else if(hasBeenVisited){
+        std::cout << revisitMessage << std::endl;
+    }
+    hasBeenVisited = 1;
+}
 
+void World::displayText(Player& player) {
+    if(!hasBeenVisited){
+        std::cout << welcomeMessage << std::endl;
+    }
+    else if(hasBeenVisited){
+        std::cout << revisitMessage << std::endl;
+    }
+    hasBeenVisited = 1;
+}
+
+void World::displayVictoryText() {
+        std::cout << "***Victory text***" << std::endl;
+}
+
+void World::displayDeathText() {
+        std::cout << "***Death text***" << std::endl;
+}
+
+std::string World::gatherUserInput() {
     std::string response;
 
-    std::cout << "Where would you like to go? ";
+    std::cout << ">> ";
     std::getline(std::cin, response);
+    std::cout << "--------------------------------------------" << std::endl;
     logger->log("User has chosen: " + response);
     return response;
 }
@@ -87,6 +115,15 @@ std::string World::getNavigation(int i) {
     }
 }
 
+std::string World::getNextMove() {
+    try{
+        return nextAction;
+    }
+    catch(std::exception& e) {
+        logger->log("NextMove returned something bad: " + std::string(e.what()));
+    }
+}
+
 bool World::isPathClear(int i) {
     try{
         return pathIsClear[i];
@@ -94,6 +131,10 @@ bool World::isPathClear(int i) {
     catch(std::exception& e) {
         logger->log("isPathClear returned something bad: " + std::string(e.what()));
     }
+}
+
+void World::clearPathForward(int i) {
+    pathIsClear[i] = true;
 }
 
 bool World::tileIsAdjacent(World tile) {
@@ -111,6 +152,7 @@ void World::equals(const World& otherWorld) {
     hasBeenVisited = otherWorld.hasBeenVisited;
     welcomeMessage = otherWorld.welcomeMessage;
     revisitMessage = otherWorld.revisitMessage;
+    navMessage = otherWorld.navMessage;
 }
 
 World World::moveToNextTile(std::string tileSelection) {
@@ -118,3 +160,10 @@ World World::moveToNextTile(std::string tileSelection) {
     return world;
 }
 
+void World::setNextAction(std::string action) {
+    nextAction = action;
+}
+
+std::string World::getNextAction() {
+    return nextAction;
+}

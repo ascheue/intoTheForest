@@ -127,24 +127,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArmorFactory.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Creature.cpp" />
     <ClCompile Include="CurrentTile.cpp" />
     <ClCompile Include="DataModule.cpp" />
     <ClCompile Include="intoTheForest.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="MageGatheringTile.cpp" />
+    <ClCompile Include="NonCutes.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="StartingTile.cpp" />
     <ClCompile Include="Tile1A.cpp" />
     <ClCompile Include="Tile1B.cpp" />
     <ClCompile Include="Tile1C.cpp" />
+    <ClCompile Include="Tile2C.cpp" />
+    <ClCompile Include="Vendor.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="Creature.h" />
     <ClInclude Include="CurrentTile.h" />
     <ClInclude Include="DataModule.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="MageGatheringTile.h" />
+    <ClInclude Include="NonCutes.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="StartingTile.h" />
     <ClInclude Include="Tile1A.h" />
     <ClInclude Include="Tile1B.h" />
     <ClInclude Include="Tile1C.h" />
+    <ClInclude Include="Tile2C.h" />
+    <ClInclude Include="Vendor.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
