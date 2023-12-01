@@ -12,23 +12,26 @@ NonCutes::NonCutes() {
     skinValue = 15;
     isSkinned = false;
 }
-
+//MB updated interactions
+//MB added case functionality to if
 void NonCutes::interact(Player &player) {
     if(health == 0) {examineBody(player);}
     else {
         bool isSelecting = true;
         while(isSelecting) {
-            std::cout << "The creature Turns hostile, what will you do?\n[flee]\n[fight]" << std::endl;
+            std::cout << "The creature hisses again and snaps at your fingers! What will you do?\n[flee]\n[fight]" << std::endl;
             std::string response = player.gatherUserInput();
             if(response == "fight") {
                 engageInCombat(player);
                 isSelecting = false;
             }
-            else if(response == "flee") {
+            else if (response == "flee" or "Flee") {
                 std::cout << "You successfully escape the creature" << std::endl;
                 isSelecting = false;
             }
-            else {std::cout << "you wanna do what?" << std::endl;}
+            else { 
+                std::cout << "Fortunately, the creature pauses to let you compose yourself." << std::endl; 
+            }
         }
     }
 }
@@ -87,12 +90,13 @@ void NonCutes::engageInCombat(Player& player) {
         //std::cout << random << std::endl;
     }
 }
-
+//MB Updated descriptions
+//MB added case functionality to if
 void NonCutes::examineBody(Player& player) {
     bool busy = true;
     while(busy) {
         if(!isSkinned) {
-            std::cout << "You examine the body, the thick animal fur appears it may be worth someting(?)\n[skin]\n[leave]" << std::endl;
+            std::cout << "You examine the body. Although truly ugly, the thick animal fur appears it may be worth something.\n[skin]\n[leave]" << std::endl;
             std::string response = player.gatherUserInput();
             if(response == "skin") {
                 int slot = player.addToInventoryAndReturnSlot("animal skin");
@@ -100,10 +104,10 @@ void NonCutes::examineBody(Player& player) {
                 isSkinned = true;
                 busy = false;
             }
-            else if(response == "leave") {busy = false;}
+            else if(response == "leave" or "Leave") { busy = false; }
         }
         else if( isSkinned) {
-            std::cout << "its a worthless animal skeleton" << std::endl;
+            std::cout << "A worthless animal carcass carelessly left to rot." << std::endl;
             busy = false;
         }
     }

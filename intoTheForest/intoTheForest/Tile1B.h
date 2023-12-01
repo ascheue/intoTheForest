@@ -11,7 +11,9 @@ public:
     //std::string gatherUserInput() override;
     World moveToNextTile(std::string tileSelection) override;
     void displayText(Creature& creature) override;
-private:
+protected:
+    std::string creatureDeadMessage;
+
 };
 
 #endif

@@ -70,7 +70,7 @@ std::string playerAttackSnark() {
 		return "Your fingers feel sweaty, but you strike a blow for ";
 	}
 	else {
-		return "Is it too late to retire? Yes. You strike out for ";
+		return "Is it too late to go home? Yes. You strike out for ";
 	}
 };
 
@@ -92,7 +92,7 @@ void Boss::engageInCombat(Player& player) {
 			while (isChoosing) {
 				player.displayPlayerCombatPrompt();
 				std::string response = player.gatherUserInput();
-				if (response == "attack") {
+				if (response == "attack" or "Attack") {
 					isChoosing = false;
 					if (rollForTrueFalse(90)) {
 						int bossModifier = getBossRandom(bossDefenseStat / 2);
@@ -120,11 +120,11 @@ void Boss::engageInCombat(Player& player) {
 						playerTurn = false;
 					}
 				}
-				else if (response == "inventory") {
+				else if (response == "inventory" or "Inventory") {
 					isChoosing = false;
 					player.displayInventoryForItemUse();
 				}
-				else if (response == "flee") {
+				else if (response == "flee" or "Flee") {
 					isChoosing = false;
 					std::cout << "The bandit asks, 'What are you, a coward?'" << std::endl;
 					playerTurn = false;

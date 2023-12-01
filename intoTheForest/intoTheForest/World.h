@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "Creature.h"
+#include "Player.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -24,7 +25,7 @@ protected:
     bool hasBeenVisited;
     std::string welcomeMessage;
     std::string revisitMessage;
-    std::string creatureDeadMessage;
+    //std::string creatureDeadMessage;
     
     std::string nextAction;
     //std::map<std::string, World> actionsToAdvanceTile;
@@ -34,6 +35,7 @@ public:
 
     virtual void displayText();
     virtual void displayText(Creature& creature);
+    virtual void displayText(Player& player);
     virtual std::string gatherUserInput();
     void displayVictoryText();
     void displayDeathText();

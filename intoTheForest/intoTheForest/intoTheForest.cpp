@@ -39,8 +39,10 @@ int main()
     NonCutes nonCute;
     Boss boss;
     logger->log("Classes loaded!");
-    currentTile.equals(tile2c);
+    currentTile.equals(startingTile);
     //------------------------------------------------------------------------------------
+    //MB added intro and commentary
+    std::cout << "Welcome to your adventure!" << std::endl;
     Armor* factory = nullptr;
     std::string CharacterClass;
 	bool selectingCharacter = true;
@@ -48,15 +50,18 @@ int main()
         player.characterSelectionPrompt();
         std::getline(std::cin, CharacterClass);
 	    player.setPlayerClass(CharacterClass);
-	    if (CharacterClass == "Warrior") {
+	    if (CharacterClass == "Warrior" or "warrior") {
+            std::cout << "\nYou take stock of your gear:" << std::endl;
 		    factory = new WarriorArmor();
             selectingCharacter = false;
 	    }
-	    else if (CharacterClass == "Mage") {
+	    else if (CharacterClass == "Mage" or "mage") {
+            std::cout << "\nYou take stock of your gear:" << std::endl;
 		    factory = new MageArmor();
             selectingCharacter = false;
 	    }
-	    else if (CharacterClass == "Ranger") {
+	    else if (CharacterClass == "Ranger" or "ranger") {
+            std::cout << "\nYou take stock of your gear:" << std::endl;
 		    factory = new RangerArmor();
             selectingCharacter = false;
 	    }
@@ -84,10 +89,12 @@ int main()
 		delete weapon;
 		delete factory;
     }
+    std::cout << "\nTaking a quick peek over the fourth wall, you note the following stats:" << std::endl;
     std::cout << "Defense:" << std::endl;
     std::cout << player.defenseStat << std::endl;
     std::cout << "Attack:" << std::endl;
     std::cout << player.attackStat << std::endl;
+    std::cout << "Who knows, maybe that information will be important someday?\n" << std::endl;
     //------------------------------------------------------------------------------------
     while(isPlaying)
     {
@@ -117,9 +124,10 @@ int main()
                         if (player.getNextMove() == "interact" || player.getNextMove() == "examine") { nonCute.interact(player); }
                         break;
                     case 3: //we are on tile1c
-                        tile1c.displayText();
-                        if (player.containsInInventory("pickaxe")) { tile1c.clearPathForward(1); }  //pickaxe check
+                        tile1c.displayText(player);
+                        //if (player.containsInInventory("pickaxe")) { tile1c.clearPathForward(1); }  //pickaxe check
                         player.setNextMove(player.gatherUserInput());
+                        if (player.getNextMove() == "CHEAT_CODE") { tile1c.clearPathForward(1); }
                         break;
                     case 4: //we are on tile2c
                         tile2c.displayText(boss);

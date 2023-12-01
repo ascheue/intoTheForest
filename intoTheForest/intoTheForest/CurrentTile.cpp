@@ -33,8 +33,8 @@ CurrentTile::CurrentTile() {
 
 std::string CurrentTile::gatherUserInput() {
     std::string response;
-
-    std::cout << "Error: CurrerntTile shouldn't be asking what you want to do ";
+//MB fixed typo in output
+    std::cout << "Error: CurrentTile shouldn't be asking what you want to do ";
     std::getline(std::cin, response);
     return response;
 }

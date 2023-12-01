@@ -32,6 +32,16 @@ void World::displayText(Creature& creature) {
     hasBeenVisited = 1;
 }
 
+void World::displayText(Player& player) {
+    if(!hasBeenVisited){
+        std::cout << welcomeMessage << std::endl;
+    }
+    else if(hasBeenVisited){
+        std::cout << revisitMessage << std::endl;
+    }
+    hasBeenVisited = 1;
+}
+
 void World::displayVictoryText() {
         std::cout << "***Victory text***" << std::endl;
 }

@@ -92,10 +92,10 @@ bool Player::getIsEngaged() {
 void Player::setIsEngaged(bool engaged) {
     currentlyEngaged = engaged;
 }
-
+//MB updated wait function description. 
 void Player::setNextMove(std::string move) {
     nextMove = move;
-    if(move == "wait") {std::cout << "Your character waits in place, fun2" << std::endl;}
+    if(move == "wait") {std::cout << "You whistle a merry tune and relax for a moment, but all too soon it's time to go." << std::endl;}
     else if(move == "inventory") {displayInventoryForItemUse();}
     else if(move == "leave") {busyOnTile = false;}
     //do we need the player.currentlyEngaged var??

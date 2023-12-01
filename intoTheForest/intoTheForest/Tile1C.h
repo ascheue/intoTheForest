@@ -12,8 +12,11 @@ public:
     //void displayText();
     void clearPathForward(int i);
     World moveToNextTile(std::string tileSelection) override;
+    void displayText(Player& player) override;
 private:
-    //std::string revisitMessageAfterClearingPath;
+    std::string welcomeMessageWithPickaxe;
+    std::string revisitMessageWithPickaxe;
+    std::string revisitMessageWhenPathClear;
 };
 
 #endif

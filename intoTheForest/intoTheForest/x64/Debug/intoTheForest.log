@@ -1,7 +1,2 @@
-﻿  Boss.cpp
-C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Boss.cpp(26,16): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
+﻿  Tile1C.cpp
   intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe

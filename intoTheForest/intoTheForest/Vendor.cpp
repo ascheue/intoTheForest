@@ -39,6 +39,9 @@ void Vendor::displayInventory() {
 void Vendor::interact(Player& player) {
     bool isSelecting = true;
     while(isSelecting) {
+        std::cout << "'Good day, friend!' the old man says warmly." << std::endl;
+        std::cout << "'I haven't seen many travelers since the bandits came through." << std::endl;
+        std::cout << "Are you by chance in need of any supplies?'" << std::endl;
         std::cout << "What would you like to do?\n[Buy]\n[Sell]" << std::endl;
         std::string input = player.gatherUserInput();
         if(input == "Buy"){
@@ -50,7 +53,7 @@ void Vendor::interact(Player& player) {
             isSelecting = false;
         }
         else {
-            std::cout << "You wanna what??" << std::endl;
+            std::cout << "The old man looks at you with confusion." << std::endl;
         }
     }
 }
@@ -119,7 +122,7 @@ void Vendor::sellToPlayer(Player& player) {
 
                 }
                 else{
-                    std::cout << "cant afford bitch!" << std::endl;
+                    std::cout << "Alas, your wallet shows you cannot afford this." << std::endl;
                 }
             }
         }

@@ -24,26 +24,35 @@ Tile1C::Tile1C() {
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
 
-    welcomeMessage = "Welcome to Tile1C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
-    //revisitMessageAfterClearingPath = "You are back at Tile1C.  What would you like to do?\n[wait]\n[inventory]\n[attempt] to clear the rockslide\n[leave]";
-    revisitMessage = "You are back at Tile1C.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+    welcomeMessage = "As you head down the path, the rockslide in the distance grows closer.\nIt is soon apparent that you won't be able to traverse the pathway.\nThe way straight ahead is completely blocked.\nIf only you had some sort of tool?\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
+    welcomeMessageWithPickaxe = "welcomeMessageWithPickaxe";
+    revisitMessage = "You're glad you weren't here when all the rocks fell!\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
+    revisitMessageWithPickaxe = "revisitMessageWithPickaxe";
+    revisitMessageWhenPathClear = "revisitMessageWhenPathClear";
 
-    navMessage = "[go straight]\n[go back]";
+    navMessage = "[go straight] forward\n[go back] down the path";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
 }
-/*
-void Tile1C::displayText() {
-    if(!hasBeenVisited){
-        std::cout << welcomeMessage << std::endl;
+
+void Tile1C::displayText(Player& player) {
+    if(pathIsClear[1]) {
+        std::cout << revisitMessageWhenPathClear << std::endl;
     }
-    else if(hasBeenVisited){
-        std::cout << revisitMessage << std::endl;
+    else {
+        if(!hasBeenVisited){
+            if(player.containsInInventory("pickaxe")) {std::cout << welcomeMessageWithPickaxe << std::endl;}
+            else {std::cout << welcomeMessage << std::endl;}
+        }
+        else if(hasBeenVisited){
+            if(player.containsInInventory("pickaxe")) {std::cout << revisitMessageWithPickaxe << std::endl;}
+            else {std::cout << revisitMessage << std::endl;}
+        }
     }
     hasBeenVisited = 1;
 }
-*/
+
 void Tile1C::clearPathForward(int i) {
     pathIsClear[i] = true;
 }

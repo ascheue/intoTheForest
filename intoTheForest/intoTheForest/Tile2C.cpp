@@ -23,11 +23,11 @@ Tile2C::Tile2C() {
     pathIsClear.push_back(true);
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
-
-    welcomeMessage = "You successfully clear the path to Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[interact] with the stranger\n[leave]";
-    creatureDeadMessage = "You are back at Tile1B.  What would you like to do?\n[wait]\n[leave]\n[inventory]\n[examine] the body";
-    revisitMessage = "You are back at Tile2C.  What would you like to do?\n[wait]\n[inventory]\n[interact] with the stranger\n[leave]";
-    navMessage = "[go back]";
+    //MB Updated messages
+    welcomeMessage = "You've successfully cleared the path of rocks!\nYou proceed forward, happy to be on your way.\n Your excitement soon fades when you find the path blocked yet again...by a bandit.\nYou won't be able to get through without dealing with him.\nWhat would you like to do?\n[interact]\n[wait]\n[inventory]\n[leave]";
+    creatureDeadMessage = "You don't have anywhere to be, so you return to the bandit's resting place.\nWhat would you like to do?\n[wait]\n[leave]\n[inventory]\n[examine] the body";
+    revisitMessage = "The bandit is still there. Apparently they teach 'patience is a virtue' in bandit school.\nWhat would you like to do?\n[interact]\n[wait]\n[inventory]\n[leave]";
+    navMessage = "[go back] to the junction in the path";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;

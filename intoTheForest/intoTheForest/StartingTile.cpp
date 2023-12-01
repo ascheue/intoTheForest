@@ -25,9 +25,9 @@ StartingTile::StartingTile() {
     pathIsClear.push_back(true);
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
-
-    welcomeMessage = "Welcome to the Starting Tile.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
-    revisitMessage = "You are back at the starting tile.  What would you like to do?\n[wait]\n[inventory]\n[leave]";
+    //MB updated welcome and revisit 
+    welcomeMessage = "On a warm sunny day, you set off through the forest towards town.\nAs you travel through the forest, you come upon a branch in the path.\nTo the left is a bright path speckled with sunlight.\nStraight ahead is a winding, dark path dotted with rocks.\nTo the right, you can see what looks like a rockslide in the distance.\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
+    revisitMessage = "You return to the junction in the path.\n What would you like to do?\n[wait]\n[inventory]\n[leave]";
     navMessage = "[go left]\n[go straight]\n[go right]";
 
     isCurrentLevel = 1; //may not need

@@ -23,10 +23,10 @@ Tile1A::Tile1A() {
     pathIsClear.push_back(true);
     listOfNavigations.push_back("");
     pathIsClear.push_back(true);
-
-    welcomeMessage = "Welcome to Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[inventory]\n[leave]";
-    revisitMessage = "You are back at Tile1A.  What would you like to do?\n[wait]\n[approach] the old man\n[inventory]\n[leave]";
-    navMessage = "[go back]";
+    //MB updated messages 
+    welcomeMessage = "The path opens up to a small clearing.\nThere is an old traveling salesman standing by a cart nearby.\nHe appears to be selling various wares.\nWhat would you like to do?\n[wait]\n[approach] the old man\n[inventory]\n[leave]";
+    revisitMessage = "The old man is waiting patiently. What would you like to do?\n[wait]\n[approach] the cart\n[inventory]\n[leave]";
+    navMessage = "[go back] to the junction in the path";
 
     isCurrentLevel = 1; //may not need
     hasBeenVisited = 0;
