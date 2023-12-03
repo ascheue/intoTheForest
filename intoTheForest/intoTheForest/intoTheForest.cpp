@@ -21,12 +21,6 @@ int main()
     logger->log("New Run---------------------------------------------------------------------------------------------------------------------------------------------------------------");
     bool isPlaying = 1;
 
-    //testing the DataModule
-    DataModule dm;
-    //dm.add("FirstKey", 1);
-    //dm.add("2ndKey",   2);
-    //dm.printAll();
-
     World world;
     CurrentTile currentTile;
     StartingTile startingTile;
@@ -50,17 +44,17 @@ int main()
         player.characterSelectionPrompt();
         std::getline(std::cin, CharacterClass);
 	    player.setPlayerClass(CharacterClass);
-	    if (CharacterClass == "Warrior" or "warrior") {
+	    if (CharacterClass == "Warrior" || CharacterClass == "warrior") {
             std::cout << "\nYou take stock of your gear:" << std::endl;
 		    factory = new WarriorArmor();
             selectingCharacter = false;
 	    }
-	    else if (CharacterClass == "Mage" or "mage") {
+	    else if (CharacterClass == "Mage" || CharacterClass == "mage") {
             std::cout << "\nYou take stock of your gear:" << std::endl;
 		    factory = new MageArmor();
             selectingCharacter = false;
 	    }
-	    else if (CharacterClass == "Ranger" or "ranger") {
+	    else if (CharacterClass == "Ranger" || CharacterClass == "ranger") {
             std::cout << "\nYou take stock of your gear:" << std::endl;
 		    factory = new RangerArmor();
             selectingCharacter = false;
@@ -170,10 +164,8 @@ int main()
                     currentTile.equals(tile2c.moveToNextTile(world.getNextMove()));
                     player.setIsBusy(true);
                 }
-                //if(temp != currentTile.getCurrentTileID()) {player.setIsBusy(true);}
             }
         }
-        //std::cout << currentTile.getCurrentTileID() << std::endl; //troubleshooting
 
     }
     return 0;

@@ -1,2 +1,5 @@
-﻿  Tile1C.cpp
+﻿  Vendor.cpp
+  intoTheForest.cpp
+  Generating Code...
+C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\intoTheForest\Vendor.cpp(78): warning C4715: 'Vendor::addToInventoryAndReturnSlot': not all control paths return a value
   intoTheForest.vcxproj -> C:\Users\Alex\Documents\School\CIS-566\finalProject\intoTheForest\x64\Debug\intoTheForest.exe

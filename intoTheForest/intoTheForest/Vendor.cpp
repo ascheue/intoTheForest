@@ -24,16 +24,6 @@ void Vendor::displayInventory() {
         if(inventoryStrings[i] == "") {std::cout << "" << prices[i] << std::endl;}
         else {std::cout << inventoryStrings[i] << ": $" << prices[i] << std::endl;}
     }
-    /*if(inventoryStrings[0] == "") {std::cout << "" << std::endl;}
-    else {std::cout << "some Bullshit.............$5" << std::endl;}
-    if(inventoryStrings[1] == "") {std::cout << "" << std::endl;}
-    else {std::cout << "some other Bullshit.......$10" << std::endl;}
-    if(inventoryStrings[2] == "") {std::cout << "" << std::endl;}
-    else {std::cout << "pickaxe...................$25" << std::endl;}
-    if(inventoryStrings[3] == "") {std::cout << "" << std::endl;}
-    else {std::cout << "" << std::endl;}
-    if(inventoryStrings[4] == "") {std::cout << "" << std::endl;}
-    else {std::cout << "" << std::endl;}*/
 }
 
 void Vendor::interact(Player& player) {
@@ -117,9 +107,6 @@ void Vendor::sellToPlayer(Player& player) {
                     inventoryStrings[i] = "";
                     player.addToWallet(prices[i]*-1);
                     prices[i] = 0;
-
-                    //player.sellingPrices[i] = 
-
                 }
                 else{
                     std::cout << "Alas, your wallet shows you cannot afford this." << std::endl;

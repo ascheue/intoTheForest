@@ -51,7 +51,7 @@ std::string bossAttackSnark() {
 	}
 };
 
-//Player on boss violence 
+//Player on boss violence
 std::string playerAttackSnark() {
 	int playerSnark = getBossRandom(5);
 	if (playerSnark == 1) {
@@ -92,7 +92,7 @@ void Boss::engageInCombat(Player& player) {
 			while (isChoosing) {
 				player.displayPlayerCombatPrompt();
 				std::string response = player.gatherUserInput();
-				if (response == "attack" or "Attack") {
+				if (response == "attack" || response == "Attack") {
 					isChoosing = false;
 					if (rollForTrueFalse(90)) {
 						int bossModifier = getBossRandom(bossDefenseStat / 2);
@@ -120,11 +120,11 @@ void Boss::engageInCombat(Player& player) {
 						playerTurn = false;
 					}
 				}
-				else if (response == "inventory" or "Inventory") {
+				else if (response == "inventory" || response == "Inventory") {
 					isChoosing = false;
 					player.displayInventoryForItemUse();
 				}
-				else if (response == "flee" or "Flee") {
+				else if (response == "flee" || response == "Flee") {
 					isChoosing = false;
 					std::cout << "The bandit asks, 'What are you, a coward?'" << std::endl;
 					playerTurn = false;
