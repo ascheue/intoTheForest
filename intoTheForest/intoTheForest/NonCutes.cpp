@@ -21,11 +21,11 @@ void NonCutes::interact(Player &player) {
         while(isSelecting) {
             std::cout << "The creature hisses again and snaps at your fingers! What will you do?\n[flee]\n[fight]" << std::endl;
             std::string response = player.gatherUserInput();
-            if(response == "fight") {
+            if(response == "fight" || response == "Fight") {
                 engageInCombat(player);
                 isSelecting = false;
             }
-            else if (response == "flee" or "Flee") {
+            else if (response == "flee" || response == "Flee") {
                 std::cout << "You successfully escape the creature" << std::endl;
                 isSelecting = false;
             }
@@ -45,7 +45,7 @@ void NonCutes::engageInCombat(Player& player) {
         if(playerTurn) {
             player.displayPlayerCombatPrompt();
             std::string response = player.gatherUserInput();
-            if(response == "attack") {
+            if(response == "attack" || response == "Attack") {
                 if(rollForTrueFalse(90)) {
                     int tempEnemyHealth = health;
                     health = health - player.attackStat;
@@ -63,11 +63,11 @@ void NonCutes::engageInCombat(Player& player) {
                     std::cout << "the Enemy creature is dead" << std::endl;
                 }
             }
-            else if(response == "inventory") {
+            else if(response == "inventory" || response == "Inventory") {
                 player.displayInventoryForItemUse();
                 playerTurn = false;
             }
-            else if(response == "flee") {
+            else if (response == "flee" || response == "Flee") {
                 playerTurn = true;
                 busy = false;
             }
@@ -104,7 +104,7 @@ void NonCutes::examineBody(Player& player) {
                 isSkinned = true;
                 busy = false;
             }
-            else if(response == "leave" or "Leave") { busy = false; }
+            else if(response == "leave" || response == "Leave") { busy = false; }
         }
         else if( isSkinned) {
             std::cout << "A worthless animal carcass carelessly left to rot." << std::endl;

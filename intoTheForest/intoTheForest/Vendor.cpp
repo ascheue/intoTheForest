@@ -4,16 +4,16 @@
 #include <iostream>
 
 Vendor::Vendor() {
-    inventoryStrings.push_back("some Bullshit");
-    prices.push_back(5);
-    inventoryStrings.push_back("some other Bullshit");
-    prices.push_back(10);
+    inventoryStrings.push_back("magic scroll");
+    prices.push_back(100);
+    inventoryStrings.push_back("key to the kingdom");
+    prices.push_back(750);
     inventoryStrings.push_back("pickaxe");
     prices.push_back(25);
-    inventoryStrings.push_back("");
-    prices.push_back(0);
-    inventoryStrings.push_back("");
-    prices.push_back(0);
+    inventoryStrings.push_back("'Not Fake' Crown");
+    prices.push_back(2500);
+    inventoryStrings.push_back("really big potato");
+    prices.push_back(50);
 
     inventorySize = 5;
 }
@@ -28,17 +28,17 @@ void Vendor::displayInventory() {
 
 void Vendor::interact(Player& player) {
     bool isSelecting = true;
+    std::cout << "'Good day, friend!' the old man says warmly." << std::endl;
+    std::cout << "'I haven't seen many travelers since the bandits came through." << std::endl;
+    std::cout << "Are you by chance in need of any supplies?'" << std::endl;
     while(isSelecting) {
-        std::cout << "'Good day, friend!' the old man says warmly." << std::endl;
-        std::cout << "'I haven't seen many travelers since the bandits came through." << std::endl;
-        std::cout << "Are you by chance in need of any supplies?'" << std::endl;
-        std::cout << "What would you like to do?\n[Buy]\n[Sell]" << std::endl;
+        std::cout << "What would you like to do?\n[buy]\n[sell]" << std::endl;
         std::string input = player.gatherUserInput();
-        if(input == "Buy"){
+        if(input == "Buy" || input == "buy") {
             sellToPlayer(player);
             isSelecting = false;
         }
-        else if(input == "Sell"){
+        else if(input == "Sell" || input == "sell") {
             buyFromPlayer(player);
             isSelecting = false;
         }

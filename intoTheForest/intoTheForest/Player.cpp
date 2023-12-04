@@ -187,8 +187,8 @@ void Player::useItem(std::string item) {
         inventory[returnInventorySlot(item)] = "";
         std::cout << "You use your potion to heal from " << temp << " to " << playerHealth << std::endl;
     }
-    else if(item == "some Bullshit" && containsInInventory("some Bullshit")) {std::cout << "Cannot use that item here!" << std::endl;}
-    else if(item == "some other Bullshit" && containsInInventory("some other Bullshit")) {std::cout << "Cannot use that item here!" << std::endl;}
+    else if(item == "magic scroll" && containsInInventory("magic scroll")) {std::cout << "Cannot use that item here!" << std::endl;}
+    else if(item == "key to the kingdom" && containsInInventory("key to the kingdom")) {std::cout << "Cannot use that item here!" << std::endl;}
     else if(item == "pickaxe") {std::cout << "This item could be useful for something..." << std::endl;}
 
     else {std::cout << "you wanna use what?" << std::endl;}

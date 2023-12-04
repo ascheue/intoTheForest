@@ -110,7 +110,7 @@ int main()
                     case 1: //we are on tile1a
                         tile1a.displayText();
                         player.setNextMove(player.gatherUserInput());
-                        if(player.getNextMove() == "approach") {vendor.interact(player);}
+                        if (player.getNextMove() == "approach") { vendor.interact(player); }
                         break;
                     case 2: //we are on tile1b
                         tile1b.displayText(nonCute);
@@ -121,7 +121,7 @@ int main()
                         tile1c.displayText(player);
                         //if (player.containsInInventory("pickaxe")) { tile1c.clearPathForward(1); }  //pickaxe check
                         player.setNextMove(player.gatherUserInput());
-                        if (player.getNextMove() == "CHEAT_CODE") { tile1c.clearPathForward(1); }
+                        if (player.getNextMove() == "use pickaxe") { tile1c.clearPathForward(1); }
                         break;
                     case 4: //we are on tile2c
                         tile2c.displayText(boss);
