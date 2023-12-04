@@ -27,8 +27,8 @@ Tile1C::Tile1C() {
     welcomeMessage = "As you head down the path, the rockslide in the distance grows closer.\nIt is soon apparent that you won't be able to traverse the pathway.\nThe way straight ahead is completely blocked.\nIf only you had some sort of tool?\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
     welcomeMessageWithPickaxe = "As you head down the path, the rockslide in the distance grows closer.\nIt is soon apparent that you won't be able to traverse the pathway.\nThe way straight ahead is completely blocked.\nIt looks like you could use your pickaxe to get through.\nWhat would you like to do?\n[use pickaxe]\n[wait]\n[inventory]\n[leave]";
     revisitMessage = "You're glad you weren't here when all the rocks fell!\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
-    revisitMessageWithPickaxe = "You're glad you weren't here when all the rocks fell!\nLucky for you, you have a pickaxe that might help.\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
-    revisitMessageWhenPathClear = "You kick a rock as you pass by the rockslide.\nRevenge for your sore arms.\nWhat would you like to do?\n[wait]\n[inventory]\n[leave]";
+    revisitMessageWithPickaxe = "You're glad you weren't here when all the rocks fell!\nLucky for you, you have a pickaxe that might help.What would you like to do?\n[use pickaxe]\n[wait]\n[inventory]\n[leave]";
+    revisitMessageWhenPathClear = "You kick a rock as you pass by the rockslide.\nRevenge for your sore arms.\nWhat would you like to do?\n[wait]\n[inventory]\n";
 
     navMessage = "[go straight] forward\n[go back] down the path";
 

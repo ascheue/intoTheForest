@@ -9,8 +9,8 @@
 using namespace std;
 
 Boss::Boss() {
-	health = 10;
-	bossAttackStat = 10;
+	health = 100;
+	bossAttackStat = 5;
 	bossDefenseStat = 5;
 };
 

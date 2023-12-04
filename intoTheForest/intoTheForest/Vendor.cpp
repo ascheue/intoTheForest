@@ -12,8 +12,8 @@ Vendor::Vendor() {
     prices.push_back(25);
     inventoryStrings.push_back("'Not Fake' Crown");
     prices.push_back(2500);
-    inventoryStrings.push_back("really big potato");
-    prices.push_back(50);
+    inventoryStrings.push_back("");
+    prices.push_back(0);
 
     inventorySize = 5;
 }

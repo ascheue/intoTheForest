@@ -45,17 +45,20 @@ int main()
         std::getline(std::cin, CharacterClass);
 	    player.setPlayerClass(CharacterClass);
 	    if (CharacterClass == "Warrior" || CharacterClass == "warrior") {
-            std::cout << "\nYou take stock of your gear:" << std::endl;
+            std::cout << "Much like your mother, you are most comfortable with a sword in hand.\nBefore starting the day, ";
+            std::cout << "you take stock of your gear:" << std::endl;
 		    factory = new WarriorArmor();
             selectingCharacter = false;
 	    }
 	    else if (CharacterClass == "Mage" || CharacterClass == "mage") {
-            std::cout << "\nYou take stock of your gear:" << std::endl;
+            std::cout << "You always thought wizard hats were the most dignified headware.\nBefore starting the day, ";
+            std::cout << "you take stock of your gear:" << std::endl;
 		    factory = new MageArmor();
             selectingCharacter = false;
 	    }
 	    else if (CharacterClass == "Ranger" || CharacterClass == "ranger") {
-            std::cout << "\nYou take stock of your gear:" << std::endl;
+            std::cout << "Why would you stab someone up close when you could stab them from far away?\nBefore starting the day, ";
+            std::cout << "you take stock of your gear:" << std::endl;
 		    factory = new RangerArmor();
             selectingCharacter = false;
 	    }
@@ -131,10 +134,9 @@ int main()
                     default:
                         break;
                 }
-                if (player.getPlayerHealth() <= 0) {return 0;}
+                if (player.getPlayerHealth() <= 0) {}
                 if(boss.getHealth() <= 0) {
                     world.displayVictoryText();
-                    return 0;
                 }
             }
             if(!player.getIsBusy())
